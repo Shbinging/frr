@@ -375,8 +375,8 @@ DEFPY (babel_set_hello_interval,
         BABEL_DEFAULT_HELLO_INTERVAL : hello_interval;
 
     if (old_interval != babel_ifp->hello_interval){
-        send_hello(ifp);
         set_timeout(&babel_ifp->hello_timeout, babel_ifp->hello_interval);
+        send_hello(ifp);
     }
     return CMD_SUCCESS;
 }

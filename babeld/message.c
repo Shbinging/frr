@@ -552,6 +552,13 @@ parse_packet(const unsigned char *from, struct interface *ifp,
         } else if(type == MESSAGE_NH) {
             unsigned char nh[16];
             int rc;
+            if(message[2] != 1 && message[2] != 3) {
+                debugf(BABEL_DEBUG_COMMON,"Received NH with incorrect AE %d.",
+                       message[2]);
+                have_v4_nh = 0;
+                have_v6_nh = 0;
+                goto fail;
+            }
             rc = network_address(message[2], message + 4, len - 2, nh);
             if(rc <= 0) {
                 have_v4_nh = 0;
@@ -692,6 +699,10 @@ parse_packet(const unsigned char *from, struct interface *ifp,
             } else {
                 memcpy(src_prefix, zeroes, 16);
                 src_plen = 0;
+            }
+            if(message[6] == 0) {
+                debugf(BABEL_DEBUG_COMMON, "Received seqno request with invalid hop count 0");
+                goto done;
             }
             rc = parse_request_subtlv(message[2], message + 4 + rc,
                                       len - 2 - rc, src_prefix, &src_plen);
