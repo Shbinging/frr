@@ -117,3 +117,6 @@ refix
 /test-suite.log
 pceplib/test/*.log
 pceplib/test/*.trs
+*.profdata
+*.profraw
+coverage_html/
