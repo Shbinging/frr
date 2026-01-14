@@ -1,0 +1,54 @@
+{
+  "rt0": [
+    "s-rt0-rt1",
+    "s-rt0-rt5"
+  ],
+  "rt1": [
+    "s-rt0-rt1",
+    "s-rt1-rt2",
+    "s-rt1-rt4",
+    "s-rt1-rt5"
+  ],
+  "rt2": [
+    "s-rt1-rt2",
+    "s-rt2-rt3",
+    "s-rt2-rt6"
+  ],
+  "rt3": [
+    "s-rt2-rt3",
+    "s-rt3-rt4",
+    "s-rt3-rt7",
+    "s-rt3-rt9"
+  ],
+  "rt4": [
+    "s-rt1-rt4",
+    "s-rt3-rt4",
+    "s-rt4-rt8"
+  ],
+  "rt5": [
+    "s-rt0-rt5",
+    "s-rt1-rt5",
+    "s-rt5-rt6",
+    "s-rt5-rt8"
+  ],
+  "rt6": [
+    "s-rt2-rt6",
+    "s-rt5-rt6",
+    "s-rt6-rt7"
+  ],
+  "rt7": [
+    "s-rt3-rt7",
+    "s-rt6-rt7",
+    "s-rt7-rt8",
+    "s-rt7-rt9"
+  ],
+  "rt8": [
+    "s-rt4-rt8",
+    "s-rt5-rt8",
+    "s-rt7-rt8"
+  ],
+  "rt9": [
+    "s-rt3-rt9",
+    "s-rt7-rt9"
+  ]
+}

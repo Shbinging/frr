@@ -2,57 +2,93 @@
   "routers": {
     "r1": {
       "type": "router",
-      "connected_switches": [
-        "sw1",
-        "sw2"
-      ]
+      "links": {
+        "sw1": {
+          "interface": "r1-eth0",
+          "peer_interface": "sw1-eth0"
+        },
+        "sw2": {
+          "interface": "r1-eth1",
+          "peer_interface": "sw2-eth0"
+        }
+      }
     },
     "r2": {
       "type": "router",
-      "connected_switches": [
-        "sw2",
-        "sw3"
-      ]
+      "links": {
+        "sw2": {
+          "interface": "r2-eth0",
+          "peer_interface": "sw2-eth1"
+        },
+        "sw3": {
+          "interface": "r2-eth1",
+          "peer_interface": "sw3-eth0"
+        }
+      }
     },
     "r3": {
       "type": "router",
-      "connected_switches": [
-        "sw4",
-        "sw3"
-      ]
+      "links": {
+        "sw4": {
+          "interface": "r3-eth0",
+          "peer_interface": "sw4-eth0"
+        },
+        "sw3": {
+          "interface": "r3-eth1",
+          "peer_interface": "sw3-eth1"
+        }
+      }
     }
   },
   "switches": {
     "sw1": {
       "type": "switch",
-      "connected_routers": [
-        "r1"
-      ]
+      "links": {
+        "r1": {
+          "interface": "sw1-eth0",
+          "peer_interface": "r1-eth0"
+        }
+      }
     },
     "sw2": {
       "type": "switch",
-      "connected_routers": [
-        "r1",
-        "r2"
-      ]
+      "links": {
+        "r1": {
+          "interface": "sw2-eth0",
+          "peer_interface": "r1-eth1"
+        },
+        "r2": {
+          "interface": "sw2-eth1",
+          "peer_interface": "r2-eth0"
+        }
+      }
     },
     "sw3": {
       "type": "switch",
-      "connected_routers": [
-        "r2",
-        "r3"
-      ]
+      "links": {
+        "r2": {
+          "interface": "sw3-eth0",
+          "peer_interface": "r2-eth1"
+        },
+        "r3": {
+          "interface": "sw3-eth1",
+          "peer_interface": "r3-eth1"
+        }
+      }
     },
     "sw4": {
       "type": "switch",
-      "connected_routers": [
-        "r3"
-      ]
+      "links": {
+        "r3": {
+          "interface": "sw4-eth0",
+          "peer_interface": "r3-eth0"
+        }
+      }
     }
   },
   "metadata": {
     "total_routers": 3,
     "total_switches": 4,
-    "source_file": "test_babel_topo1.py"
+    "exported_from": "babel_topo1"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "success": [
+    {
+      "path": "ospf_sr_te_topo1/test_ospf_sr_te_topo1.py",
+      "r": 7,
+      "s_links": 16
+    }
+  ],
+  "failed": []
+}

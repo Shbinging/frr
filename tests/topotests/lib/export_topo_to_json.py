@@ -15,108 +15,81 @@ does not need to be re-importable by topojson.
 """
 
 import json
+import logging
 from collections import OrderedDict
+from lib.topogen import TopoSwitch, TopoRouter
+
+logger = logging.getLogger(__name__)
 
 
-def export_topology_to_json(tgen, output_path):
+def export_topology_to_json(tgen, output_path=None):
     """
-    Export topology structure to JSON file.
-    
-    Args:
-        tgen: Topogen object with built topology
-        output_path: Path to output JSON file
-    
-    Returns:
-        Dictionary with topology data
-    """
-    topo_data = OrderedDict()
-    
-    # Extract routers
-    routers = OrderedDict()
-    for name, gear in sorted(tgen.gears.items()):
-        # Check if it's a router (has 'routertype' attribute or is TopoRouter)
-        if hasattr(gear, 'routertype') or gear.__class__.__name__ == 'TopoRouter':
-            router_info = {
-                'type': 'router',
-                'links': {}
-            }
-            
-            # Extract links
-            for ifname, (peer_gear, peer_ifname) in gear.links.items():
-                peer_name = peer_gear.name
-                router_info['links'][peer_name] = {
-                    'interface': ifname,
-                    'peer_interface': peer_ifname
-                }
-            
-            routers[name] = router_info
-    
-    # Extract switches
-    switches = OrderedDict()
-    for name, gear in sorted(tgen.gears.items()):
-        # Check if it's a switch (has no 'routertype' and is TopoSwitch)
-        if gear.__class__.__name__ == 'TopoSwitch':
-            switch_info = {
-                'type': 'switch',
-                'links': {}
-            }
-            
-            # Extract links
-            for ifname, (peer_gear, peer_ifname) in gear.links.items():
-                peer_name = peer_gear.name
-                switch_info['links'][peer_name] = {
-                    'interface': ifname,
-                    'peer_interface': peer_ifname
-                }
-            
-            switches[name] = switch_info
-    
-    # Build final structure
-    if routers:
-        topo_data['routers'] = routers
-    if switches:
-        topo_data['switches'] = switches
-    
-    # Add metadata
-    topo_data['metadata'] = {
-        'total_routers': len(routers),
-        'total_switches': len(switches),
-        'exported_from': tgen.modname
+    Exports the current topology to a simplified JSON format:
+    {
+        "router_name": ["switch_name1", "switch_name2"],
+        ...
     }
     
-    # Write to file
-    with open(output_path, 'w') as f:
-        json.dump(topo_data, f, indent=2)
+    Args:
+        tgen (Topogen): The topogen instance with built topology
+        output_path (str, optional): Path to save the JSON file
     
-    return topo_data
+    Returns:
+        dict: The topology dictionary
+    """
+    routers = tgen.routers()
+    switches = tgen.get_gears(TopoSwitch)
+    
+    # Result dictionary: router -> list of connected switches
+    simple_topo = {}
+    
+    # Initialize all routers in the dict
+    for rname in routers:
+        simple_topo[rname] = []
 
+    # Map switches to routers by looking at links
+    # Iterate over switches and find which routers they connect to
+    for sname, switch in switches.items():
+        for link_interface in switch.links:
+            # switch.links[iface] = (peer_gear, peer_iface)
+            peer_gear, _ = switch.links[link_interface]
+            
+            if isinstance(peer_gear, TopoRouter):
+                # Found a connection from Switch -> Router
+                rname = peer_gear.name
+                if rname in simple_topo:
+                    if sname not in simple_topo[rname]:
+                        simple_topo[rname].append(sname)
+                else:
+                    # Should not happen if tgen.routers() covers everything, but safety first
+                    simple_topo[rname] = [sname]
+    
+    # Sort lists for deterministic output
+    for rname in simple_topo:
+        simple_topo[rname].sort()
+
+    # Sort keys
+    sorted_topo = OrderedDict(sorted(simple_topo.items()))
+
+    if output_path:
+        try:
+            with open(output_path, 'w') as f:
+                json.dump(sorted_topo, f, indent=2)
+            logger.info(f"Topology exported to {output_path}")
+        except Exception as e:
+            logger.error(f"Failed to export topology: {e}")
+            
+    return sorted_topo
 
 def print_topology_summary(topo_data):
     """
-    Print a human-readable summary of the topology.
-    
-    Args:
-        topo_data: Dictionary with topology data
+    Print a summary of the simplified topology data.
     """
-    print("\n=== Topology Summary ===")
+    print(f"\n=== Topology Summary ({len(topo_data)} routers) ===")
     
-    if 'metadata' in topo_data:
-        meta = topo_data['metadata']
-        print(f"Source: {meta.get('exported_from', 'unknown')}")
-        print(f"Routers: {meta.get('total_routers', 0)}")
-        print(f"Switches: {meta.get('total_switches', 0)}")
-    
-    if 'routers' in topo_data:
-        print("\nRouters:")
-        for rname, rinfo in topo_data['routers'].items():
-            links = list(rinfo['links'].keys())
-            print(f"  {rname}: connected to {', '.join(links)}")
-    
-    if 'switches' in topo_data:
-        print("\nSwitches:")
-        for sname, sinfo in topo_data['switches'].items():
-            links = list(sinfo['links'].keys())
-            print(f"  {sname}: connected to {', '.join(links)}")
+    for router, switches in topo_data.items():
+        switches_str = ", ".join(switches) if switches else "None"
+        print(f"  {router}: [{switches_str}]")
     
     print("========================\n")
 

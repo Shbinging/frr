@@ -1,0 +1,4658 @@
+Destination: /home/frr/de/frr/tests/topotests/collected_topologies
+Found 90 relevant tests.
+[  1/90] babel_topo1                         ✓ R:3 S_Links:6
+[  2/90] bfd_isis_topo1                     INFO:topo:loading topology: test_bfd_isis_topo1
+ ✓ R:5 S_Links:10
+[  3/90] bfd_ospf_topo1                     INFO:topo:loading topology: test_bfd_ospf_topo1
+ ✓ R:5 S_Links:10
+[  4/90] isis_advertise_high_metrics        INFO:topo:loading topology: isis_advertise_high_metrics
+ ✓ R:4 S_Links:8
+[  5/90] isis_lfa_topo1                     INFO:topo:loading topology: isis_lfa_topo1
+ ✓ R:7 S_Links:22
+[  6/90] isis_lsp_bits_topo1                INFO:topo:loading topology: isis_lsp_bits_topo1
+ ✓ R:6 S_Links:13
+[  7/90] isis_rlfa_topo1                    INFO:topo:loading topology: isis_rlfa_topo1
+ ✓ R:8 S_Links:16
+[  8/90] isis_snmp                          INFO:topo:loading topology: isis_snmp
+ ✓ R:6 S_Links:12
+[  9/90] isis_sr_flex_algo_topo1            INFO:topo:loading topology: isis_sr_flex_algo_topo1
+ ✓ R:3 S_Links:6
+[ 10/90] isis_sr_flex_algo_topo2            INFO:topo:loading topology: isis_sr_flex_algo_topo2
+ ✓ R:10 S_Links:32
+[ 11/90] isis_sr_te_topo1                   INFO:topo:loading topology: isis_sr_te_topo1
+ ✓ R:7 S_Links:19
+[ 12/90] isis_sr_topo1                      INFO:topo:loading topology: isis_sr_topo1
+ ✓ R:6 S_Links:17
+[ 13/90] isis_srv6_topo1                    DEBUG:topo:[DUT: rt1]: Running command: ip -6 a flush sr0 scope global && ip a add 2001:db8::1/128 dev sr0 && ip l set sr0 up
+DEBUG:topo:[DUT: rt2]: Running command: ip -6 a flush sr0 scope global && ip a add 2001:db8::2/128 dev sr0 && ip l set sr0 up
+DEBUG:topo:[DUT: rt3]: Running command: ip -6 a flush sr0 scope global && ip a add 2001:db8::3/128 dev sr0 && ip l set sr0 up
+DEBUG:topo:[DUT: rt4]: Running command: ip -6 a flush sr0 scope global && ip a add 2001:db8::4/128 dev sr0 && ip l set sr0 up
+DEBUG:topo:[DUT: rt5]: Running command: ip -6 a flush sr0 scope global && ip a add 2001:db8::5/128 dev sr0 && ip l set sr0 up
+DEBUG:topo:[DUT: rt6]: Running command: ip -6 a flush sr0 scope global && ip a add 2001:db8::6/128 dev sr0 && ip l set sr0 up
+INFO:topo:loading topology: isis_srv6_topo1
+ ✓ R:7 S_Links:19
+[ 14/90] isis_te_topo1                      INFO:topo:loading topology: isis_te_topo1
+ ✓ R:4 S_Links:10
+[ 15/90] isis_tilfa_topo1                   INFO:topo:loading topology: isis_tilfa_topo1
+ ✓ R:6 S_Links:17
+[ 16/90] isis_topo1                         INFO:topo:loading topology: isis_topo1
+ ✓ R:5 S_Links:8
+[ 17/90] isis_topo1_vrf                     INFO:topo:loading topology: isis_topo1_vrf
+ ✓ R:5 S_Links:8
+[ 18/90] ldp_sync_isis_topo1                INFO:topo:loading topology: ldp_sync_isis_topo1
+ ✓ R:6 S_Links:12
+[ 19/90] ldp_sync_ospf_topo1                INFO:topo:loading topology: ldp_sync_ospf_topo1
+ ✓ R:6 S_Links:12
+[ 20/90] pim_dr_nondr_with_ospf_topo2       INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Master Topology: 
+ 
+
+Descripton: Configuring OSPF on r1/r2/r4/r5 for RP reachablility.
+IPs are assigned automatically to routers, start IP and subnet is defined in respective JSON file
+JSON snippet:
+    "link_ip_start": {"ipv4": "10.0.0.0", "v4mask": 24},
+
+                               r5 ------- i2
+                    10.0.3.2/24| 10.0.0.2/24
+                               |
+                    10.0.3.1/24|
+                  ------------ r4 ----------
+                |   10.0.1.2/24  10.0.2.2/24 |
+    10.0.1.1/24 |                            | 10.0.2.1/24
+                r1 ----------- s1 ---------- r2
+                  10.0.4.2/24  | 10.0.4.3/24
+                               |
+                               |10.0.4.1/24
+                               i1
+
+    Description:
+    i1, i2  - FRR running iperf to send IGMP
+                                     join and traffic
+    r1, r2, r4, r5 - FRR router
+    s1 - OVS switch
+
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router i1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router i2
+INFO:topo:Topo: Add router r4
+INFO:topo:Topo: Add router r5
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: i1
+{
+    "lo": {
+        "ipv4": "1.0.1.8/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: i2
+{
+    "r5": {
+        "interface": "i2-r5-eth0",
+        "ipv4": "10.0.0.1/24",
+        "peer-interface": "r5-i2-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "pim": "enable",
+        "type": "loopback"
+    },
+    "r4": {
+        "interface": "r1-r4-eth0",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r4-r1-eth0",
+        "pim": "enable"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "pim": "enable",
+        "type": "loopback"
+    },
+    "r4": {
+        "interface": "r2-r4-eth0",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r4-r2-eth1",
+        "pim": "enable"
+    }
+}
+DEBUG:topo:Generated link data for router: r4
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "pim": "enable",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r4-r1-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r4-eth0",
+        "pim": "enable"
+    },
+    "r2": {
+        "interface": "r4-r2-eth1",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r4-eth0",
+        "pim": "enable"
+    },
+    "r5": {
+        "interface": "r4-r5-eth2",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r5-r4-eth1",
+        "pim": "enable"
+    }
+}
+DEBUG:topo:Generated link data for router: r5
+{
+    "i2": {
+        "interface": "r5-i2-eth0",
+        "ipv4": "10.0.0.2/24",
+        "peer-interface": "i2-r5-eth0",
+        "pim": "enable"
+    },
+    "lo": {
+        "ipv4": "1.0.5.17/32",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "pim": "enable",
+        "type": "loopback"
+    },
+    "r4": {
+        "interface": "r5-r4-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r4-r5-eth2",
+        "pim": "enable"
+    }
+}
+DEBUG:topo:Generated link data for router: r5
+{
+    "i2": {
+        "interface": "r5-i2-eth0",
+        "ipv4": "10.0.0.2/24",
+        "peer-interface": "i2-r5-eth0",
+        "pim": "enable"
+    },
+    "lo": {
+        "ipv4": "1.0.5.17/32",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "pim": "enable",
+        "type": "loopback"
+    },
+    "r4": {
+        "interface": "r5-r4-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r4-r5-eth2",
+        "pim": "enable"
+    }
+}
+INFO:topo:loading topology: test_pim_dr_nondr_with_ospf_topo2
+ ✓ R:6 S_Links:3
+[ 21/90] ospf6_ecmp_inter_area              INFO:topo:loading topology: ospf6_ecmp_inter_area
+ ✓ R:9 S_Links:0
+[ 22/90] ospf6_gr_topo1                     INFO:topo:loading topology: ospf6_gr_topo1
+ ✓ R:7 S_Links:14
+[ 23/90] ospf6_loopback_cost                INFO:topo:loading topology: test_ospf6_loopback_cost
+ ✓ R:2 S_Links:2
+[ 24/90] ospf6_point_to_multipoint          INFO:topo:loading topology: ospf6_point_to_multipoint
+ ✓ R:4 S_Links:9
+[ 25/90] ospf6_topo1                        INFO:topo:loading topology: ospf6_topo1
+ ✓ R:4 S_Links:9
+[ 26/90] ospf6_topo1_vrf                    INFO:topo:loading topology: ospf6_topo1_vrf
+ ✓ R:4 S_Links:9
+[ 27/90] ospf6_topo2                        INFO:topo:loading topology: ospf6_topo2
+ ✓ R:4 S_Links:7
+[ 28/90] ospf_asbr_summary_topo1            INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r0-r3-eth3",
+        "ipv4": "10.0.3.1/24",
+        "peer-interface": "r3-r0-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.5.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth2"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.6.1/24",
+        "peer-interface": "r3-r1-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.7.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth4"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r0-link0": {
+        "description": "DummyIntftoR0",
+        "interface": "r3-r0-eth1",
+        "ipv4": "10.0.3.2/24",
+        "peer-interface": "r0-r3-eth3"
+    },
+    "r1": {
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth4",
+        "ipv4": "10.0.7.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_asbr_summary_topo1
+ ✓ R:4 S_Links:0
+[ 29/90] ospf_asbr_summary_type7_lsa        INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.3"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_asbr_summary_type7_lsa
+ ✓ R:4 S_Links:0
+[ 30/90] ospf_authentication                INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.5.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r2": {
+        "interface": "r3-r2-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_authentication
+ ✓ R:4 S_Links:0
+[ 31/90] ospf_chaos                         INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.5.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r2": {
+        "interface": "r3-r2-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_chaos
+ ✓ R:4 S_Links:0
+[ 32/90] ospf_ecmp                          INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r1-link1": {
+        "interface": "r0-r1-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth1"
+    },
+    "r1-link2": {
+        "interface": "r0-r1-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth2"
+    },
+    "r1-link3": {
+        "interface": "r0-r1-eth3",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth3"
+    },
+    "r1-link4": {
+        "interface": "r0-r1-eth4",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth4"
+    },
+    "r1-link5": {
+        "interface": "r0-r1-eth5",
+        "ipv4": "10.0.5.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth5"
+    },
+    "r1-link6": {
+        "interface": "r0-r1-eth6",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth6"
+    },
+    "r1-link7": {
+        "interface": "r0-r1-eth7",
+        "ipv4": "10.0.7.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth7"
+    },
+    "r2": {
+        "interface": "r0-r2-eth8",
+        "ipv4": "10.0.8.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth9",
+        "ipv4": "10.0.9.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r0-link1": {
+        "interface": "r1-r0-eth1",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth1"
+    },
+    "r0-link2": {
+        "interface": "r1-r0-eth2",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth2"
+    },
+    "r0-link3": {
+        "interface": "r1-r0-eth3",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth3"
+    },
+    "r0-link4": {
+        "interface": "r1-r0-eth4",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth4"
+    },
+    "r0-link5": {
+        "interface": "r1-r0-eth5",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth5"
+    },
+    "r0-link6": {
+        "interface": "r1-r0-eth6",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth6"
+    },
+    "r0-link7": {
+        "interface": "r1-r0-eth7",
+        "ipv4": "10.0.7.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth7"
+    },
+    "r2": {
+        "interface": "r1-r2-eth8",
+        "ipv4": "10.0.10.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth9",
+        "ipv4": "10.0.11.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth10",
+        "ipv4": "10.0.12.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.8.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth8"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.10.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth8"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.13.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.9.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth9"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.11.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth9"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.12.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth10"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.13.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_ecmp
+ ✓ R:4 S_Links:0
+[ 33/90] ospf_ecmp_lan                      INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add router r4
+INFO:topo:Topo: Add router r5
+INFO:topo:Topo: Add router r6
+INFO:topo:Topo: Add router r7
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth0",
+        "ipv4": "10.0.0.1/24",
+        "peer-interface": "r3-r1-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.3"
+        },
+        "peer-interface": "r1-r3-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r4
+{
+    "lo": {
+        "ipv4": "1.0.5.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r5
+{
+    "lo": {
+        "ipv4": "1.0.6.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r6
+{
+    "lo": {
+        "ipv4": "1.0.7.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r7
+{
+    "lo": {
+        "ipv4": "1.0.8.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r7
+{
+    "lo": {
+        "ipv4": "1.0.8.17/32",
+        "type": "loopback"
+    },
+    "s1": {
+        "interface": "r7-s1-eth0",
+        "ipv4": "10.0.1.8/24",
+        "ospf": {
+            "area": "0.0.0.3",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "priority": 0
+        }
+    }
+}
+INFO:topo:loading topology: test_ospf_ecmp_lan
+ ✓ R:8 S_Links:8
+[ 34/90] ospf_flood_reduction_tc1           INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "broadcast"
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "broadcast"
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_flood_reduction_tc1
+ ✓ R:4 S_Links:0
+[ 35/90] ospf_flood_reduction_tc2           INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "broadcast"
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "broadcast"
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_flood_reduction_tc2
+ ✓ R:4 S_Links:0
+[ 36/90] ospf_flood_reduction_tc3           INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "broadcast"
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "broadcast"
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_flood_reduction_tc3
+ ✓ R:4 S_Links:0
+[ 37/90] ospf_lan                           INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth0",
+        "ipv4": "10.0.0.1/24",
+        "peer-interface": "r3-r1-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.3"
+        },
+        "peer-interface": "r1-r3-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.3"
+        },
+        "peer-interface": "r1-r3-eth0"
+    },
+    "s1": {
+        "interface": "r3-s1-eth1",
+        "ipv4": "10.0.1.4/24",
+        "ospf": {
+            "area": "0.0.0.3",
+            "dead_interval": 10,
+            "hello_interval": 1,
+            "priority": 0
+        }
+    }
+}
+INFO:topo:loading topology: test_ospf_lan
+ ✓ R:4 S_Links:4
+[ 38/90] ospf_nssa                          INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.3"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_nssa
+ ✓ R:4 S_Links:0
+[ 39/90] ospf_p2mp                          INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-multipoint"
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_p2mp
+ ✓ R:4 S_Links:0
+[ 40/90] ospf_routemaps                     INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.5.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r2": {
+        "interface": "r3-r2-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_routemaps
+ ✓ R:4 S_Links:0
+[ 41/90] ospf_rte_calc                      INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.5.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r2": {
+        "interface": "r3-r2-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_rte_calc
+ ✓ R:4 S_Links:0
+[ 42/90] ospf_single_area                   INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv4": "10.0.0.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv4": "10.0.1.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv4": "10.0.2.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv4": "10.0.0.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv4": "10.0.3.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv4": "10.0.4.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv4": "10.0.5.1/24",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv4": "10.0.1.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv4": "10.0.3.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv4": "10.0.6.1/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv4": "10.0.2.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv4": "10.0.4.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv4": "10.0.5.2/24",
+        "ospf": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv4": "10.0.6.2/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_single_area
+ ✓ R:4 S_Links:0
+[ 43/90] ospf_dual_stack                    INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add router r4
+INFO:topo:Topo: Add router r5
+DEBUG:topo:Generated link data for router: r1
+{
+    "r3": {
+        "interface": "r1-r3-eth0",
+        "ipv4": "10.0.13.1/24",
+        "ipv6": "2013:13::1/64",
+        "ospf": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "r3": {
+        "interface": "r2-r3-eth0",
+        "ipv4": "10.0.23.2/24",
+        "ipv6": "2023:23::2/64",
+        "ospf": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r2-eth1"
+    },
+    "r4": {
+        "interface": "r2-r4-eth1",
+        "ipv4": "10.0.24.2/24",
+        "ipv6": "2034:34::2/64",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r4-r2-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "r1": {
+        "interface": "r3-r1-eth0",
+        "ipv4": "10.0.13.3/24",
+        "ipv6": "2013:13::3/64",
+        "ospf": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r1-r3-eth0"
+    },
+    "r2": {
+        "interface": "r3-r2-eth1",
+        "ipv4": "10.0.23.3/24",
+        "ipv6": "2023:23::3/64",
+        "ospf": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r2-r3-eth0"
+    },
+    "r4": {
+        "interface": "r3-r4-eth2",
+        "ipv4": "10.0.34.3/24",
+        "ipv6": "2034:34::3/64",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r4-r3-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r4
+{
+    "r2": {
+        "interface": "r4-r2-eth0",
+        "ipv4": "10.0.24.4/24",
+        "ipv6": "2024:24::4/64",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r2-r4-eth1"
+    },
+    "r3": {
+        "interface": "r4-r3-eth1",
+        "ipv4": "10.0.34.4/24",
+        "ipv6": "2034:34::4/64",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r4-eth2"
+    },
+    "r5": {
+        "interface": "r4-r5-eth2",
+        "ipv4": "10.0.45.4/24",
+        "ipv6": "2045:45::4/64",
+        "ospf": {
+            "area": "2.2.2.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "2.2.2.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r5-r4-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r5
+{
+    "r4": {
+        "interface": "r5-r4-eth0",
+        "ipv4": "10.0.45.5/24",
+        "ipv6": "2045:45::5/64",
+        "ospf": {
+            "area": "2.2.2.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "ospf6": {
+            "area": "2.2.2.2",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r4-r5-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospf_dual_stack
+ ✓ R:5 S_Links:0
+[ 44/90] ospf_forwarding_address_self       INFO:topo:loading topology: test_ospf_forwarding_address_self
+ ✓ R:3 S_Links:3
+[ 45/90] ospf_gr_helper1                    INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "s1": {
+        "interface": "r3-s1-eth0",
+        "ipv4": "17.1.1.4/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "priority": 0
+        }
+    }
+}
+INFO:topo:loading topology: test_ospf_gr_helper1
+ ✓ R:4 S_Links:4
+[ 46/90] ospf_gr_helper2                    INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "s1": {
+        "interface": "r3-s1-eth0",
+        "ipv4": "17.1.1.4/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "priority": 0
+        }
+    }
+}
+INFO:topo:loading topology: test_ospf_gr_helper2
+ ✓ R:4 S_Links:4
+[ 47/90] ospf_gr_helper3                    INFO:topo:Testsuite start time: Wed Jan 14 08:31:04 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv4": "1.0.1.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv4": "1.0.2.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv4": "1.0.3.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv4": "1.0.4.17/32",
+        "type": "loopback"
+    },
+    "s1": {
+        "interface": "r3-s1-eth0",
+        "ipv4": "17.1.1.4/24",
+        "ospf": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "priority": 0
+        }
+    }
+}
+INFO:topo:loading topology: test_ospf_gr_helper3
+ ✓ R:4 S_Links:4
+[ 48/90] ospf_gr_topo1                      INFO:topo:loading topology: ospf_gr_topo1
+ ✓ R:7 S_Links:14
+[ 49/90] ospf_instance_redistribute         INFO:topo:loading topology: ospf_instance_redistribute
+ ✓ R:1 S_Links:1
+[ 50/90] ospf_metric_propagation            INFO:topo:loading topology: ospf_metric_propagation
+ ✓ R:9 S_Links:22
+[ 51/90] ospf_multi_instance                DEBUG:topo:[DUT: r2]: Running command: ip -4 a flush lo1 scope global && ip a add 2.2.2.1/32 dev lo1 && ip l set lo1 up
+DEBUG:topo:[DUT: r2]: Running command: ip -4 a flush lo2 scope global && ip a add 2.2.2.2/32 dev lo2 && ip l set lo2 up
+INFO:topo:loading topology: ospf_multi_instance
+ ✓ R:3 S_Links:4
+[ 52/90] ospf_multi_vrf_bgp_route_leak      INFO:topo:loading topology: ospf_multi_vrf_bgp_route_leak
+ ✓ R:4 S_Links:10
+[ 53/90] ospf_netns_vrf                     INFO:topo:loading topology: ospf_netns_vrf
+ ✓ R:3 S_Links:6
+[ 54/90] ospf_nssa_topo1                    INFO:topo:loading topology: ospf_nssa_topo1
+ ✓ R:4 S_Links:6
+[ 55/90] ospf_p2mp_broadcast                INFO:topo:loading topology: ospf_p2mp
+ ✓ R:4 S_Links:8
+[ 56/90] ospf_p2mp_non_broadcast            INFO:topo:loading topology: ospf_p2mp
+ ✓ R:4 S_Links:8
+[ 57/90] ospf_prefix_suppression            INFO:topo:loading topology: ospf_prefix_suppression
+ ✓ R:3 S_Links:13
+[ 58/90] ospf_prune_next_hop                INFO:topo:loading topology: ospf_prune_next_hop
+ ✓ R:8 S_Links:17
+[ 59/90] ospf_single_switch                 INFO:topo:loading topology: ospf_single_switch
+ ✓ R:8 S_Links:16
+[ 60/90] ospf_sr_te_topo1                   INFO:topo:loading topology: ospf_sr_te_topo1
+ ✓ R:7 S_Links:16
+[ 61/90] ospf_sr_topo1                      INFO:topo:loading topology: ospf_sr_topo1
+ ✓ R:6 S_Links:17
+[ 62/90] ospf_suppress_fa                   INFO:topo:loading topology: ospf_suppress_fa
+ ✓ R:3 S_Links:4
+[ 63/90] ospf_te_topo1                      INFO:topo:loading topology: ospf_te_topo1
+ ✓ R:4 S_Links:1
+[ 64/90] ospf_tilfa_topo1                   INFO:topo:loading topology: ospf_tilfa_topo1
+ ✓ R:5 S_Links:10
+[ 65/90] ospf_topo1                         INFO:topo:loading topology: ospf_topo1
+ ✓ R:4 S_Links:9
+[ 66/90] ospf_topo2                         INFO:topo:loading topology: ospf_topo2
+ ✓ R:4 S_Links:0
+[ 67/90] ospf_unnumbered                    INFO:topo:loading topology: ospf_unnumbered
+ ✓ R:2 S_Links:4
+[ 68/90] ospf_unnumbered_point_to_multipointINFO:topo:loading topology: ospf_unnumbered_point_to_multipoint
+ ✓ R:3 S_Links:6
+[ 69/90] ospf_clientapi                      ✗ No build_topo variable, setup_module, or tgen fixture found
+[ 70/90] ospfv3_asbr_summary_topo1          INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r0-r3-eth3",
+        "ipv6": "fd00:0:0:3::1/64",
+        "peer-interface": "r3-r0-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv6": "fd00:0:0:5::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth2"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv6": "fd00:0:0:6::1/64",
+        "peer-interface": "r3-r1-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:1::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:7::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth4"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:2::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r0-link0": {
+        "description": "DummyIntftoR0",
+        "interface": "r3-r0-eth1",
+        "ipv6": "fd00:0:0:3::2/64",
+        "peer-interface": "r0-r3-eth3"
+    },
+    "r1": {
+        "interface": "r3-r1-eth2",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth3",
+        "ipv6": "fd00:0:0:6::2/64",
+        "ospf6": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth4",
+        "ipv6": "fd00:0:0:7::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_asbr_summary_topo1
+ ✓ R:4 S_Links:0
+[ 71/90] ospfv3_authentication              INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv6": "fd00:0:0:3::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv6": "fd00:0:0:5::1/64",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:1::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:3::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:6::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:2::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv6": "fd00:0:0:6::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_authentication
+ ✓ R:4 S_Links:0
+[ 72/90] ospfv3_ecmp                        INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r1-link1": {
+        "interface": "r0-r1-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth1"
+    },
+    "r1-link2": {
+        "interface": "r0-r1-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth2"
+    },
+    "r1-link3": {
+        "interface": "r0-r1-eth3",
+        "ipv6": "fd00:0:0:3::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth3"
+    },
+    "r1-link4": {
+        "interface": "r0-r1-eth4",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth4"
+    },
+    "r1-link5": {
+        "interface": "r0-r1-eth5",
+        "ipv6": "fd00:0:0:5::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth5"
+    },
+    "r1-link6": {
+        "interface": "r0-r1-eth6",
+        "ipv6": "fd00:0:0:6::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth6"
+    },
+    "r1-link7": {
+        "interface": "r0-r1-eth7",
+        "ipv6": "fd00:0:0:7::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth7"
+    },
+    "r2": {
+        "interface": "r0-r2-eth8",
+        "ipv6": "fd00:0:0:8::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth9",
+        "ipv6": "fd00:0:0:9::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r0-link1": {
+        "interface": "r1-r0-eth1",
+        "ipv6": "fd00:0:0:1::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth1"
+    },
+    "r0-link2": {
+        "interface": "r1-r0-eth2",
+        "ipv6": "fd00:0:0:2::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth2"
+    },
+    "r0-link3": {
+        "interface": "r1-r0-eth3",
+        "ipv6": "fd00:0:0:3::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth3"
+    },
+    "r0-link4": {
+        "interface": "r1-r0-eth4",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth4"
+    },
+    "r0-link5": {
+        "interface": "r1-r0-eth5",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth5"
+    },
+    "r0-link6": {
+        "interface": "r1-r0-eth6",
+        "ipv6": "fd00:0:0:6::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth6"
+    },
+    "r0-link7": {
+        "interface": "r1-r0-eth7",
+        "ipv6": "fd00:0:0:7::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth7"
+    },
+    "r2": {
+        "interface": "r1-r2-eth8",
+        "ipv6": "fd00:0:0:a::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth9",
+        "ipv6": "fd00:0:0:b::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth10",
+        "ipv6": "fd00:0:0:c::1/64",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:8::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth8"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:a::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth8"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:d::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:9::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth9"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv6": "fd00:0:0:b::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth9"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv6": "fd00:0:0:c::2/64",
+        "ospf6": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth10"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv6": "fd00:0:0:d::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_ecmp
+ ✓ R:4 S_Links:0
+[ 73/90] ospfv3_ecmp_lan                    INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+INFO:topo:Topo: Add router r4
+INFO:topo:Topo: Add router r5
+INFO:topo:Topo: Add router r6
+INFO:topo:Topo: Add router r7
+INFO:topo:Topo: Add switch s1
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth0",
+        "ipv6": "fd00::1/64",
+        "peer-interface": "r3-r1-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth0",
+        "ipv6": "fd00::2/64",
+        "peer-interface": "r1-r3-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r4
+{
+    "lo": {
+        "ipv6": "2001:db8:f::5:17/128",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r5
+{
+    "lo": {
+        "ipv6": "2001:db8:f::6:17/128",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r6
+{
+    "lo": {
+        "ipv6": "2001:db8:f::7:17/128",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r7
+{
+    "lo": {
+        "ipv6": "2001:db8:f::8:17/128",
+        "type": "loopback"
+    }
+}
+DEBUG:topo:Generated link data for router: r7
+{
+    "lo": {
+        "ipv6": "2001:db8:f::8:17/128",
+        "type": "loopback"
+    },
+    "s1": {
+        "interface": "r7-s1-eth0",
+        "ipv6": "fd00:0:0:8::1/64",
+        "ospf6": {
+            "area": "0.0.0.3",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "priority": 0
+        }
+    }
+}
+INFO:topo:loading topology: test_ospfv3_ecmp_lan
+ ✓ R:8 S_Links:8
+[ 74/90] ospfv3_nssa                        INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001::1:17/128",
+        "type": "loopback"
+    },
+    "r2": {
+        "interface": "r1-r2-eth0",
+        "ipv6": "12::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001::2:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r2-r1-eth0",
+        "ipv6": "12::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth0"
+    },
+    "r3": {
+        "interface": "r2-r3-eth1",
+        "ipv6": "23::2/64",
+        "ospf6": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001::3:17/128",
+        "type": "loopback"
+    },
+    "r2": {
+        "interface": "r3-r2-eth0",
+        "ipv6": "23::3/64",
+        "ospf6": {
+            "area": "1.1.1.1",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth1"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_nssa
+ ✓ R:3 S_Links:0
+[ 75/90] ospfv3_nssa2                       INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv6": "fd00:0:0:3::1/64",
+        "ospf6": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv6": "fd00:0:0:5::1/64",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:1::2/64",
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:3::2/64",
+        "ospf6": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:6::1/64",
+        "ospf6": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:2::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.3"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv6": "fd00:0:0:6::2/64",
+        "ospf6": {
+            "area": "0.0.0.2",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_nssa2
+ ✓ R:4 S_Links:0
+[ 76/90] ospfv3_routemaps                   INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv6": "fd00:0:0:3::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:1::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:3::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:5::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:2::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r2": {
+        "interface": "r3-r2-eth2",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_routemaps
+ ✓ R:4 S_Links:0
+[ 77/90] ospfv3_rte_calc                    INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv6": "fd00:0:0:3::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:1::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:3::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:5::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:2::2/64",
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r2": {
+        "interface": "r3-r2-eth2",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_rte_calc
+ ✓ R:4 S_Links:0
+[ 78/90] ospfv3_single_area                 INFO:topo:Testsuite start time: Wed Jan 14 08:31:05 2026
+INFO:topo:========================================
+INFO:topo:Running setup_module to create topology
+INFO:topo:Topo: Add router r0
+INFO:topo:Topo: Add router r1
+INFO:topo:Topo: Add router r2
+INFO:topo:Topo: Add router r3
+DEBUG:topo:Generated link data for router: r0
+{
+    "lo": {
+        "ipv6": "2001:db8:f::1:17/128",
+        "type": "loopback"
+    },
+    "r1": {
+        "interface": "r0-r1-eth0",
+        "ipv6": "fd00::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r0-eth0"
+    },
+    "r2": {
+        "interface": "r0-r2-eth1",
+        "ipv6": "fd00:0:0:1::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r0-eth0"
+    },
+    "r3": {
+        "interface": "r0-r3-eth2",
+        "ipv6": "fd00:0:0:2::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r3-r0-eth0"
+    }
+}
+DEBUG:topo:Generated link data for router: r1
+{
+    "lo": {
+        "ipv6": "2001:db8:f::2:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r1-r0-eth0",
+        "ipv6": "fd00::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r1-eth0"
+    },
+    "r2": {
+        "interface": "r1-r2-eth1",
+        "ipv6": "fd00:0:0:3::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r1-eth1"
+    },
+    "r3": {
+        "interface": "r1-r3-eth2",
+        "ipv6": "fd00:0:0:4::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r1-eth1"
+    },
+    "r3-link0": {
+        "description": "DummyIntftoR3",
+        "interface": "r1-r3-eth3",
+        "ipv6": "fd00:0:0:5::1/64",
+        "peer-interface": "r3-r1-eth2"
+    }
+}
+DEBUG:topo:Generated link data for router: r2
+{
+    "lo": {
+        "ipv6": "2001:db8:f::3:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r2-r0-eth0",
+        "ipv6": "fd00:0:0:1::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r0-r2-eth1"
+    },
+    "r1": {
+        "interface": "r2-r1-eth1",
+        "ipv6": "fd00:0:0:3::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r2-eth1"
+    },
+    "r3": {
+        "interface": "r2-r3-eth2",
+        "ipv6": "fd00:0:0:6::1/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r3-r2-eth3"
+    }
+}
+DEBUG:topo:Generated link data for router: r3
+{
+    "lo": {
+        "ipv6": "2001:db8:f::4:17/128",
+        "type": "loopback"
+    },
+    "r0": {
+        "interface": "r3-r0-eth0",
+        "ipv6": "fd00:0:0:2::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1,
+            "network": "point-to-point"
+        },
+        "peer-interface": "r0-r3-eth2"
+    },
+    "r1": {
+        "interface": "r3-r1-eth1",
+        "ipv6": "fd00:0:0:4::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r1-r3-eth2"
+    },
+    "r1-link0": {
+        "description": "DummyIntftoR1",
+        "interface": "r3-r1-eth2",
+        "ipv6": "fd00:0:0:5::2/64",
+        "ospf6": {
+            "area": "0.0.0.0"
+        },
+        "peer-interface": "r1-r3-eth3"
+    },
+    "r2": {
+        "interface": "r3-r2-eth3",
+        "ipv6": "fd00:0:0:6::2/64",
+        "ospf6": {
+            "area": "0.0.0.0",
+            "dead_interval": 4,
+            "hello_interval": 1
+        },
+        "peer-interface": "r2-r3-eth2"
+    }
+}
+INFO:topo:loading topology: test_ospfv3_single_area
+ ✓ R:4 S_Links:0
+[ 79/90] ospfv3_route_map_forwarding        INFO:topo:loading topology: ospfv3_route_map_forwarding
+ ✓ R:2 S_Links:2
+[ 80/90] rip_allow_ecmp                     INFO:topo:loading topology: test_rip_allow_ecmp
+ ✓ R:5 S_Links:5
+[ 81/90] rip_bfd_topo1                       ✗ No build_topo variable, setup_module, or tgen fixture found
+[ 82/90] rip_default_metric                 INFO:topo:loading topology: rip_default_metric
+ ✓ R:2 S_Links:0
+[ 83/90] rip_del_instance                   INFO:topo:loading topology: rip_del_instance
+ ✓ R:1 S_Links:0
+[ 84/90] rip_disabled_networks              INFO:topo:loading topology: test_rip_disabled_networks
+ ✓ R:3 S_Links:4
+[ 85/90] rip_passive_interface              INFO:topo:loading topology: test_rip_passive_interface
+ ✓ R:3 S_Links:3
+[ 86/90] rip_topo1                          INFO:topo:loading topology: rip_topo1
+ ✓ R:3 S_Links:8
+[ 87/90] ripng_aggregate_address            INFO:topo:loading topology: test_ripng_aggregate_address
+ ✓ R:2 S_Links:2
+[ 88/90] ripng_allow_ecmp                   INFO:topo:loading topology: test_ripng_allow_ecmp
+ ✓ R:5 S_Links:5
+[ 89/90] ripng_route_map                    INFO:topo:loading topology: test_ripng_route_map
+ ✓ R:3 S_Links:3
+[ 90/90] ripng_topo1                        INFO:topo:loading topology: ripng_topo1
+ ✓ R:3 S_Links:8
+
+============================================================
+Success: 88
+Failed:  2
+============================================================
+
+Failures details:
+- ospfapi: No build_topo variable, setup_module, or tgen fixture found
+- rip_bfd_topo1: No build_topo variable, setup_module, or tgen fixture found

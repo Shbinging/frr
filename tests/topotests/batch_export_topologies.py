@@ -103,29 +103,22 @@ def extract_topology_from_file(filepath):
             # Also add this router if not already in routers set
             routers.add(router_name)
     
-    # Build final structure
+    # Build final simplified structure
+    # router_name -> [switch_name1, switch_name2]
     result = OrderedDict()
-    result['routers'] = OrderedDict()
+    
+    # Initialize all routers
     for rname in sorted(routers):
-        connected_switches = [sw for sw, routers_list in switch_to_routers.items() if rname in routers_list]
-        result['routers'][rname] = {
-            'type': 'router',
-            'connected_switches': connected_switches
-        }
-    
-    result['switches'] = OrderedDict()
-    for sw_name in sorted(switches.keys()):
-        connected_routers = switch_to_routers.get(sw_name, [])
-        result['switches'][sw_name] = {
-            'type': 'switch',
-            'connected_routers': connected_routers
-        }
-    
-    result['metadata'] = {
-        'total_routers': len(result['routers']),
-        'total_switches': len(result['switches']),
-        'source_file': os.path.basename(filepath)
-    }
+        result[rname] = []
+        
+        # Find connected switches
+        for sw_name in switches:
+            connected_routers = switch_to_routers.get(sw_name, [])
+            if rname in connected_routers:
+                result[rname].append(sw_name)
+        
+        # Sort switches
+        result[rname].sort()
     
     return result
 
@@ -202,43 +195,39 @@ def main():
                 source_file = test_file
                 break
         
-        if topo_data and (topo_data.get('routers') or topo_data.get('switches')):
-            # Save JSON
-            if args.output_dir:
-                output_file = os.path.join(args.output_dir, f"{test_name}.json")
-            else:
-                output_file = os.path.join(test_path, 'exported_topology.json')
+            if topo_data:
+                # Save JSON
+                if args.output_dir:
+                    output_file = os.path.join(args.output_dir, f"{test_name}.json")
+                else:
+                    output_file = os.path.join(test_path, 'exported_topology.json')
+                
+                try:
+                    with open(output_file, 'w') as f:
+                        json.dump(topo_data, f, indent=2)
+                    
+                    routers = len(topo_data)
+                    switches = sum(len(s) for s in topo_data.values())
+                    
+                    status = f"✓ R:{routers} S_Links:{switches}"
+                    if args.verbose:
+                        status += f" ({source_file})"
+                    
+                    print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} {status}")
+                    
+                    results['success'].append({
+                        'name': test_name,
+                        'routers': routers,
+                        'output': output_file
+                    })
+                except Exception as e:
+                    print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} ✗ Write error: {e}")
+                    results['failed'].append({'name': test_name, 'error': str(e)})
             
-            try:
-                with open(output_file, 'w') as f:
-                    json.dump(topo_data, f, indent=2)
-                
-                routers = len(topo_data.get('routers', {}))
-                switches = len(topo_data.get('switches', {}))
-                
-                status = f"✓ R:{routers} S:{switches}"
+            else:
                 if args.verbose:
-                    status += f" ({source_file})"
-                
-                print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} {status}")
-                
-                results['success'].append({
-                    'name': test_name,
-                    'routers': routers,
-                    'switches': switches,
-                    'output': output_file
-                })
-            except Exception as e:
-                print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} ✗ Write error: {e}")
-                results['failed'].append({'name': test_name, 'error': str(e)})
-        
-        elif topo_data:
-            print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} - Empty")
-            results['empty'].append({'name': test_name})
-        else:
-            if args.verbose:
-                print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} ✗ Parse failed")
-            results['failed'].append({'name': test_name, 'error': 'Parse failed'})
+                    print(f"[{i:3d}/{len(test_dirs)}] {test_name:40s} ✗ Parse failed")
+                results['failed'].append({'name': test_name, 'error': 'Parse failed'})
     
     print("=" * 70)
     print(f"\nSummary:")
