@@ -1,0 +1,38 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r5": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r6": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r7": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 7,
+    "total_switches": 0,
+    "source_file": "test_zebra_fec_nexthop_resolution.py"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 1,
+    "source_file": "test_bgp_default-originate_route-map_set.py"
+  }
+}

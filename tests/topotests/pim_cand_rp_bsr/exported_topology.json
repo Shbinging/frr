@@ -1,0 +1,90 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3",
+        "s5"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s6",
+        "s7"
+      ]
+    },
+    "r5": {
+      "type": "router",
+      "connected_switches": [
+        "s5",
+        "s7"
+      ]
+    },
+    "r6": {
+      "type": "router",
+      "connected_switches": [
+        "s6",
+        "s7"
+      ]
+    }
+  },
+  "switches": {
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r4",
+        "r3"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "r5"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "r4",
+        "r6"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "r5",
+        "r6",
+        "r4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 6,
+    "total_switches": 5,
+    "source_file": "test_pim_cand_rp_bsr.py"
+  }
+}

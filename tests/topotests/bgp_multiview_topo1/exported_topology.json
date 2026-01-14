@@ -1,0 +1,23 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {
+    "sw0": {
+      "type": "switch",
+      "connected_routers": []
+    },
+    "sw1": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 1,
+    "total_switches": 2,
+    "source_file": "test_bgp_multiview_topo1.py"
+  }
+}

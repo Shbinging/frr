@@ -1,0 +1,44 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1-1-2"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1-1-2",
+        "s2-2-3"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2-2-3"
+      ]
+    }
+  },
+  "switches": {
+    "s1-1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2-2-3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 2,
+    "source_file": "test_ospf_multi_instance.py"
+  }
+}

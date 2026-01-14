@@ -1,0 +1,145 @@
+{
+  "routers": {
+    "rt1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    "rt2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s7"
+      ]
+    },
+    "rt3": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3",
+        "s8"
+      ]
+    },
+    "rt4": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s9"
+      ]
+    },
+    "rt5": {
+      "type": "router",
+      "connected_switches": [
+        "s5",
+        "s10"
+      ]
+    },
+    "rt6": {
+      "type": "router",
+      "connected_switches": [
+        "s6",
+        "s11"
+      ]
+    },
+    "rt7": {
+      "type": "router",
+      "connected_switches": [
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s11"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt2"
+      ]
+    },
+    "s10": {
+      "type": "switch",
+      "connected_routers": [
+        "rt5",
+        "rt7"
+      ]
+    },
+    "s11": {
+      "type": "switch",
+      "connected_routers": [
+        "rt6",
+        "rt7"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt3"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt4"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt5"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt6"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt7"
+      ]
+    },
+    "s8": {
+      "type": "switch",
+      "connected_routers": [
+        "rt3",
+        "rt7"
+      ]
+    },
+    "s9": {
+      "type": "switch",
+      "connected_routers": [
+        "rt4",
+        "rt7"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 7,
+    "total_switches": 11,
+    "source_file": "test_isis_lfa_topo1.py"
+  }
+}

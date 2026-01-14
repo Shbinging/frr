@@ -1,0 +1,76 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s5"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s5"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "r2"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r4",
+        "r2"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "r4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 5,
+    "source_file": "test_isis_te_topo1.py"
+  }
+}

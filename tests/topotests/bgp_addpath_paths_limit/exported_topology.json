@@ -1,0 +1,79 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r5": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r6": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r7": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r7",
+        "r2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 7,
+    "total_switches": 3,
+    "source_file": "test_bgp_addpath_paths_limit.py"
+  }
+}

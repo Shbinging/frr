@@ -1,0 +1,14 @@
+{
+  "routers": {},
+  "switches": {
+    "s-r1-r2": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 0,
+    "total_switches": 1,
+    "source_file": "test_bgp_show_l2vpn_evpn_rt.py"
+  }
+}

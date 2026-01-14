@@ -1,0 +1,26 @@
+{
+  "routers": {
+    "leaf1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "leaf2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "spine1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "spine2": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 0,
+    "source_file": "test_two_layer_wuecmp.py"
+  }
+}

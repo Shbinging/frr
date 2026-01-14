@@ -1,0 +1,26 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 0,
+    "source_file": "test_pim_vrf.py"
+  }
+}

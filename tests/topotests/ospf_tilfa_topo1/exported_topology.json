@@ -1,0 +1,81 @@
+{
+  "routers": {
+    "rt1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "rt2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3"
+      ]
+    },
+    "rt3": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s4"
+      ]
+    },
+    "rt4": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s5"
+      ]
+    },
+    "rt5": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s5"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt4"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "rt3",
+        "rt5"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "rt4",
+        "rt5"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 5,
+    "total_switches": 5,
+    "source_file": "test_ospf_tilfa_topo1.py"
+  }
+}

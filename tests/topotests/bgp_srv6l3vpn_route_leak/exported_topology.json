@@ -1,0 +1,18 @@
+{
+  "routers": {
+    "ce1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "pe1": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 2,
+    "total_switches": 0,
+    "source_file": "test_bgp_srv6l3vpn_route_leak.py"
+  }
+}

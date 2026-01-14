@@ -1,0 +1,135 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1-1-2"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1-1-2",
+        "s10-lan"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2-3",
+        "s6-3",
+        "s10-lan"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s3-4",
+        "s7-4",
+        "s10-lan"
+      ]
+    },
+    "r5": {
+      "type": "router",
+      "connected_switches": [
+        "s4-5",
+        "s8-5",
+        "s10-lan"
+      ]
+    },
+    "r6": {
+      "type": "router",
+      "connected_switches": [
+        "s5-6",
+        "s9-6",
+        "s10-lan"
+      ]
+    },
+    "r7": {
+      "type": "router",
+      "connected_switches": [
+        "s6-3"
+      ]
+    },
+    "r8": {
+      "type": "router",
+      "connected_switches": [
+        "s9-6"
+      ]
+    }
+  },
+  "switches": {
+    "s1-1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s10-lan": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    "s2-3": {
+      "type": "switch",
+      "connected_routers": [
+        "r3"
+      ]
+    },
+    "s3-4": {
+      "type": "switch",
+      "connected_routers": [
+        "r4"
+      ]
+    },
+    "s4-5": {
+      "type": "switch",
+      "connected_routers": [
+        "r5"
+      ]
+    },
+    "s5-6": {
+      "type": "switch",
+      "connected_routers": [
+        "r6"
+      ]
+    },
+    "s6-3": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "r7"
+      ]
+    },
+    "s7-4": {
+      "type": "switch",
+      "connected_routers": [
+        "r4"
+      ]
+    },
+    "s8-5": {
+      "type": "switch",
+      "connected_routers": [
+        "r5"
+      ]
+    },
+    "s9-6": {
+      "type": "switch",
+      "connected_routers": [
+        "r6",
+        "r8"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 8,
+    "total_switches": 10,
+    "source_file": "test_ospf_prune_next_hop.py"
+  }
+}

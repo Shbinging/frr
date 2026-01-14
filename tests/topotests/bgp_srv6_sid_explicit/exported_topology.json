@@ -1,0 +1,34 @@
+{
+  "routers": {
+    "c11": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "c12": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "c21": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "c22": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 6,
+    "total_switches": 0,
+    "source_file": "test_bgp_srv6_sid_explicit.py"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "routers": {
+    "ce1": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "ce2": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "ce3": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "ce4": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "ce5": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "ce6": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "dst": {
+      "type": "router",
+      "connected_switches": [
+        "s9"
+      ]
+    },
+    "rt1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "rt2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "rt3": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s4",
+        "s5"
+      ]
+    },
+    "rt4": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3",
+        "s6",
+        "s7"
+      ]
+    },
+    "rt5": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s5",
+        "s6",
+        "s8"
+      ]
+    },
+    "rt6": {
+      "type": "router",
+      "connected_switches": [
+        "s7",
+        "s8",
+        "s9"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt2",
+        "rt3"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt4"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt4"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "rt3",
+        "rt5"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "rt3",
+        "rt5"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "rt4",
+        "rt5"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "rt4",
+        "rt6"
+      ]
+    },
+    "s8": {
+      "type": "switch",
+      "connected_routers": [
+        "rt5",
+        "rt6"
+      ]
+    },
+    "s9": {
+      "type": "switch",
+      "connected_routers": [
+        "rt6",
+        "dst",
+        "ce1",
+        "ce2",
+        "ce3",
+        "ce4",
+        "ce5",
+        "ce6"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 13,
+    "total_switches": 9,
+    "source_file": "test_srv6_sid_manager.py"
+  }
+}

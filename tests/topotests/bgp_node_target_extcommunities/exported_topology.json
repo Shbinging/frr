@@ -1,0 +1,44 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 1,
+    "source_file": "test_bgp_node_target_extcommunities.py"
+  }
+}

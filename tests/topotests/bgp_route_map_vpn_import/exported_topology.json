@@ -1,0 +1,44 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 1,
+    "total_switches": 4,
+    "source_file": "test_bgp_route_map_vpn_import.py"
+  }
+}

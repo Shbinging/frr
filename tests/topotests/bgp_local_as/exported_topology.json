@@ -1,0 +1,44 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 2,
+    "source_file": "test_bgp_local_as.py"
+  }
+}

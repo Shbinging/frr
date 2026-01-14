@@ -1,0 +1,114 @@
+{
+  "routers": {
+    "rt1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "rt2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3"
+      ]
+    },
+    "rt3": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "rt4": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s6"
+      ]
+    },
+    "rt5": {
+      "type": "router",
+      "connected_switches": [
+        "s6"
+      ]
+    },
+    "rt6": {
+      "type": "router",
+      "connected_switches": [
+        "s5",
+        "s7"
+      ]
+    },
+    "rt7": {
+      "type": "router",
+      "connected_switches": [
+        "s7",
+        "s8"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt3"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "rt3",
+        "rt4"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "rt3",
+        "rt6"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "rt4",
+        "rt5"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "rt6",
+        "rt7"
+      ]
+    },
+    "s8": {
+      "type": "switch",
+      "connected_routers": [
+        "rt7"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 7,
+    "total_switches": 8,
+    "source_file": "test_ospf_gr_topo1.py"
+  }
+}

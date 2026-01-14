@@ -1,0 +1,60 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "sw0"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "sw0",
+        "sw1",
+        "sw2"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw2"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "sw1"
+      ]
+    }
+  },
+  "switches": {
+    "sw0": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "sw1": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3",
+        "r4"
+      ]
+    },
+    "sw2": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 3,
+    "source_file": "test_ldp_topo1.py"
+  }
+}

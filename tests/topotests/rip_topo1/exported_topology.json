@@ -1,0 +1,72 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw2",
+        "sw5",
+        "sw6"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "sw2",
+        "sw3"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "sw3",
+        "sw4"
+      ]
+    }
+  },
+  "switches": {
+    "sw1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "sw2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "sw3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    },
+    "sw4": {
+      "type": "switch",
+      "connected_routers": [
+        "r3"
+      ]
+    },
+    "sw5": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "sw6": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 6,
+    "source_file": "test_rip_topo1.py"
+  }
+}

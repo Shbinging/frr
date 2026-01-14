@@ -1,0 +1,58 @@
+{
+  "routers": {
+    "R1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3"
+      ]
+    },
+    "R2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "R3": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "R4": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "R1",
+        "R2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "R2",
+        "R3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "R1",
+        "R4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 3,
+    "source_file": "test_bgp_lu2.py"
+  }
+}

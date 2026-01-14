@@ -1,0 +1,27 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": []
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 2,
+    "total_switches": 2,
+    "source_file": "test_bgp_aggregate_address_topo1.py"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 1,
+    "total_switches": 1,
+    "source_file": "test_bgp_vrf_netns_topo.py"
+  }
+}

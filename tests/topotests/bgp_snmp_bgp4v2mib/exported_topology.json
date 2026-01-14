@@ -1,0 +1,44 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "rr": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2",
+        "r3",
+        "rr"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 1,
+    "source_file": "test_bgp_snmp_bgp4v2mib.py"
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "routers": {
+    "hostd11": {
+      "type": "router",
+      "connected_switches": [
+        "sw13",
+        "sw15"
+      ]
+    },
+    "hostd12": {
+      "type": "router",
+      "connected_switches": [
+        "sw14",
+        "sw16"
+      ]
+    },
+    "hostd21": {
+      "type": "router",
+      "connected_switches": [
+        "sw17",
+        "sw19"
+      ]
+    },
+    "hostd22": {
+      "type": "router",
+      "connected_switches": [
+        "sw18",
+        "sw20"
+      ]
+    },
+    "leaf1": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw3",
+        "sw5",
+        "sw6",
+        "sw7",
+        "sw8"
+      ]
+    },
+    "leaf2": {
+      "type": "router",
+      "connected_switches": [
+        "sw2",
+        "sw4",
+        "sw9",
+        "sw10",
+        "sw11",
+        "sw12"
+      ]
+    },
+    "spine1": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw2"
+      ]
+    },
+    "spine2": {
+      "type": "router",
+      "connected_switches": [
+        "sw3",
+        "sw4"
+      ]
+    },
+    "torm11": {
+      "type": "router",
+      "connected_switches": [
+        "sw5",
+        "sw9",
+        "sw13",
+        "sw14"
+      ]
+    },
+    "torm12": {
+      "type": "router",
+      "connected_switches": [
+        "sw6",
+        "sw10",
+        "sw15",
+        "sw16"
+      ]
+    },
+    "torm21": {
+      "type": "router",
+      "connected_switches": [
+        "sw7",
+        "sw11",
+        "sw17",
+        "sw18"
+      ]
+    },
+    "torm22": {
+      "type": "router",
+      "connected_switches": [
+        "sw8",
+        "sw12",
+        "sw19",
+        "sw20"
+      ]
+    }
+  },
+  "switches": {
+    "sw1": {
+      "type": "switch",
+      "connected_routers": [
+        "spine1",
+        "leaf1"
+      ]
+    },
+    "sw10": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf2",
+        "torm12"
+      ]
+    },
+    "sw11": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf2",
+        "torm21"
+      ]
+    },
+    "sw12": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf2",
+        "torm22"
+      ]
+    },
+    "sw13": {
+      "type": "switch",
+      "connected_routers": [
+        "torm11",
+        "hostd11"
+      ]
+    },
+    "sw14": {
+      "type": "switch",
+      "connected_routers": [
+        "torm11",
+        "hostd12"
+      ]
+    },
+    "sw15": {
+      "type": "switch",
+      "connected_routers": [
+        "torm12",
+        "hostd11"
+      ]
+    },
+    "sw16": {
+      "type": "switch",
+      "connected_routers": [
+        "torm12",
+        "hostd12"
+      ]
+    },
+    "sw17": {
+      "type": "switch",
+      "connected_routers": [
+        "torm21",
+        "hostd21"
+      ]
+    },
+    "sw18": {
+      "type": "switch",
+      "connected_routers": [
+        "torm21",
+        "hostd22"
+      ]
+    },
+    "sw19": {
+      "type": "switch",
+      "connected_routers": [
+        "torm22",
+        "hostd21"
+      ]
+    },
+    "sw2": {
+      "type": "switch",
+      "connected_routers": [
+        "spine1",
+        "leaf2"
+      ]
+    },
+    "sw20": {
+      "type": "switch",
+      "connected_routers": [
+        "torm22",
+        "hostd22"
+      ]
+    },
+    "sw3": {
+      "type": "switch",
+      "connected_routers": [
+        "spine2",
+        "leaf1"
+      ]
+    },
+    "sw4": {
+      "type": "switch",
+      "connected_routers": [
+        "spine2",
+        "leaf2"
+      ]
+    },
+    "sw5": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf1",
+        "torm11"
+      ]
+    },
+    "sw6": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf1",
+        "torm12"
+      ]
+    },
+    "sw7": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf1",
+        "torm21"
+      ]
+    },
+    "sw8": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf1",
+        "torm22"
+      ]
+    },
+    "sw9": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf2",
+        "torm11"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 12,
+    "total_switches": 20,
+    "source_file": "test_evpn_mh.py"
+  }
+}

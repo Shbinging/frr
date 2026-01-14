@@ -1,0 +1,26 @@
+{
+  "routers": {
+    "PE1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "PE2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "host1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "host2": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 0,
+    "source_file": "test_bgp_evpn_gr.py"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": []
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 2,
+    "source_file": "test_bgp_conditional_advertisement.py"
+  }
+}

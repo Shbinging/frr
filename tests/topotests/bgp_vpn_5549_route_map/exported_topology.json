@@ -1,0 +1,58 @@
+{
+  "routers": {
+    "cpe1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "cpe2": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "pe1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "pe2": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "cpe1",
+        "pe1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "pe1",
+        "pe2"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "pe2",
+        "cpe2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 3,
+    "source_file": "test_bgp_vpn_5549_route_map.py"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s4"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s4"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r4"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 4,
+    "source_file": "test_bgp_aigp_rr.py"
+  }
+}

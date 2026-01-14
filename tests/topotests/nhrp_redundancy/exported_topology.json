@@ -1,0 +1,86 @@
+{
+  "routers": {
+    "host": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "nhc1": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3"
+      ]
+    },
+    "nhc2": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s4"
+      ]
+    },
+    "nhs1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "nhs2": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "nhs3": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "router": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "nhs1",
+        "nhs2",
+        "nhs3",
+        "router"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "nhc1",
+        "nhc2",
+        "router"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "nhc1",
+        "host"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "nhc2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 7,
+    "total_switches": 4,
+    "source_file": "test_nhrp_redundancy.py"
+  }
+}

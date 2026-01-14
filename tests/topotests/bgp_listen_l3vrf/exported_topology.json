@@ -1,0 +1,39 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 2,
+    "total_switches": 2,
+    "source_file": "test_bgp_listen_l3vrf.py"
+  }
+}

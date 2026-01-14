@@ -1,0 +1,14 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 1,
+    "total_switches": 0,
+    "source_file": "test_pbr_topo1.py"
+  }
+}

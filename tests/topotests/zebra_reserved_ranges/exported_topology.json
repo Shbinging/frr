@@ -1,0 +1,19 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 1,
+    "total_switches": 1,
+    "source_file": "test_zebra_reserved_ranges.py"
+  }
+}

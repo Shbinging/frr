@@ -1,0 +1,155 @@
+{
+  "routers": {
+    "h1": {
+      "type": "router",
+      "connected_switches": [
+        "s1-h1"
+      ]
+    },
+    "h2": {
+      "type": "router",
+      "connected_switches": [
+        "s4-h2"
+      ]
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1-2",
+        "s1-a",
+        "s1-h1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1-2",
+        "s2-a",
+        "s2-c"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s3-4",
+        "s3-b",
+        "s3-c"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s3-4",
+        "s4-b",
+        "s4-h2"
+      ]
+    },
+    "ra": {
+      "type": "router",
+      "connected_switches": [
+        "sa-b",
+        "s1-a",
+        "s2-a"
+      ]
+    },
+    "rb": {
+      "type": "router",
+      "connected_switches": [
+        "sa-b",
+        "s3-b",
+        "s4-b"
+      ]
+    },
+    "rc": {
+      "type": "router",
+      "connected_switches": [
+        "s2-c",
+        "s3-c"
+      ]
+    }
+  },
+  "switches": {
+    "s1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s1-a": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "ra"
+      ]
+    },
+    "s1-h1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h1"
+      ]
+    },
+    "s2-a": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "ra"
+      ]
+    },
+    "s2-c": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "rc"
+      ]
+    },
+    "s3-4": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "r4"
+      ]
+    },
+    "s3-b": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "rb"
+      ]
+    },
+    "s3-c": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "rc"
+      ]
+    },
+    "s4-b": {
+      "type": "switch",
+      "connected_routers": [
+        "r4",
+        "rb"
+      ]
+    },
+    "s4-h2": {
+      "type": "switch",
+      "connected_routers": [
+        "r4",
+        "h2"
+      ]
+    },
+    "sa-b": {
+      "type": "switch",
+      "connected_routers": [
+        "ra",
+        "rb"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 9,
+    "total_switches": 11,
+    "source_file": "test_ospf_metric_propagation.py"
+  }
+}

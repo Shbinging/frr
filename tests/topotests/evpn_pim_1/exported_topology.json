@@ -1,0 +1,72 @@
+{
+  "routers": {
+    "host1": {
+      "type": "router",
+      "connected_switches": [
+        "sw3"
+      ]
+    },
+    "host2": {
+      "type": "router",
+      "connected_switches": [
+        "sw4"
+      ]
+    },
+    "leaf1": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw3"
+      ]
+    },
+    "leaf2": {
+      "type": "router",
+      "connected_switches": [
+        "sw2",
+        "sw4"
+      ]
+    },
+    "spine": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw2"
+      ]
+    }
+  },
+  "switches": {
+    "sw1": {
+      "type": "switch",
+      "connected_routers": [
+        "spine",
+        "leaf1"
+      ]
+    },
+    "sw2": {
+      "type": "switch",
+      "connected_routers": [
+        "spine",
+        "leaf2"
+      ]
+    },
+    "sw3": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf1",
+        "host1"
+      ]
+    },
+    "sw4": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf2",
+        "host2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 5,
+    "total_switches": 4,
+    "source_file": "test_evpn_pim_topo1.py"
+  }
+}

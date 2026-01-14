@@ -1,0 +1,60 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s0"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s0",
+        "s1",
+        "s2"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    }
+  },
+  "switches": {
+    "s0": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3",
+        "r4"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 3,
+    "source_file": "test_ldp_oc_acl_topo1.py"
+  }
+}

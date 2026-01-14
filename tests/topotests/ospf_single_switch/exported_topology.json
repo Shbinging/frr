@@ -1,0 +1,14 @@
+{
+  "routers": {},
+  "switches": {
+    "switch": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 0,
+    "total_switches": 1,
+    "source_file": "test_ospf_single_switch.py"
+  }
+}

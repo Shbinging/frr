@@ -1,0 +1,104 @@
+{
+  "routers": {
+    "c1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "x1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "y1": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "y2": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s5",
+        "s6"
+      ]
+    },
+    "y3": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s5",
+        "s7"
+      ]
+    },
+    "z1": {
+      "type": "router",
+      "connected_switches": [
+        "s6",
+        "s7"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "c1",
+        "x1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "x1",
+        "y1"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "y1",
+        "y2"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "y1",
+        "y3"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "y2",
+        "y3"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "y2",
+        "z1"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "y3",
+        "z1"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 6,
+    "total_switches": 7,
+    "source_file": "test_bgp_community_change_update.py"
+  }
+}

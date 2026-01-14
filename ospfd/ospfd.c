@@ -402,6 +402,7 @@ struct ospf *ospf_new_alloc(unsigned short instance, const char *name)
 	new->t_read = NULL;
 	new->oi_write_q = list_new();
 	new->write_oi_count = OSPF_WRITE_INTERFACE_COUNT_DEFAULT;
+	new->read_oi_count = OSPF_READ_INTERFACE_COUNT_DEFAULT;
 
 	new->proactive_arp = OSPF_PROACTIVE_ARP_DEFAULT;
 

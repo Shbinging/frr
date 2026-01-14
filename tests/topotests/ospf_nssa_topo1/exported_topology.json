@@ -1,0 +1,58 @@
+{
+  "routers": {
+    "rt1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "rt2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "rt3": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "rt4": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "rt1",
+        "rt2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "rt2",
+        "rt4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 3,
+    "source_file": "test_ospf_nssa_topo1.py"
+  }
+}

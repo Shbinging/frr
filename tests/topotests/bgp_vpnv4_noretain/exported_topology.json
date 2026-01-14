@@ -1,0 +1,79 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s5",
+        "s7"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3",
+        "s4",
+        "s6",
+        "s8"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "s8": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 2,
+    "total_switches": 8,
+    "source_file": "test_bgp_vpnv4_noretain.py"
+  }
+}

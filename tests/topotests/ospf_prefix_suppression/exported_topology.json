@@ -1,0 +1,87 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1-1-2",
+        "s2-1-2",
+        "s3-1-2",
+        "s4-1-2",
+        "s7-1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1-1-2",
+        "s2-1-2",
+        "s3-1-2",
+        "s4-1-2",
+        "s5-2-3",
+        "s6-2-3"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s5-2-3",
+        "s6-2-3"
+      ]
+    }
+  },
+  "switches": {
+    "s1-1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2-1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s3-1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s4-1-2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s5-2-3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    },
+    "s6-2-3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    },
+    "s7-1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 7,
+    "source_file": "test_ospf_prefix_suppression.py"
+  }
+}

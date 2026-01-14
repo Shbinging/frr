@@ -1,0 +1,45 @@
+{
+  "routers": {
+    "bmp1import": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "bmp2import": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r1import": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1import",
+        "bmp1import",
+        "bmp2import"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 5,
+    "total_switches": 1,
+    "source_file": "test_bgp_bmp_3.py"
+  }
+}

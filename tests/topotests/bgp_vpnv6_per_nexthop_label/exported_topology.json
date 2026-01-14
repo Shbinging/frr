@@ -1,0 +1,93 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s4",
+        "s5"
+      ]
+    },
+    "r11": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r12": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "r13": {
+      "type": "router",
+      "connected_switches": [
+        "s4"
+      ]
+    },
+    "r14": {
+      "type": "router",
+      "connected_switches": [
+        "s5"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3"
+      ]
+    },
+    "rr": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r11",
+        "r12",
+        "rr"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r13"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r14"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 7,
+    "total_switches": 5,
+    "source_file": "test_bgp_vpnv6_per_nexthop_label.py"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s0",
+        "s1"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s0",
+        "s2"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3"
+      ]
+    },
+    "r4": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s0": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r4"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "r4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 4,
+    "source_file": "test_isis_advertise_high_metrics.py"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "routers": {
+    "rt1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "rt2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "rt3": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 3,
+    "total_switches": 0,
+    "source_file": "test_isis_sr_flex_algo_topo1.py"
+  }
+}

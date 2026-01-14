@@ -1,0 +1,65 @@
+{
+  "routers": {
+    "ce1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "ce2": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "pe1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "rr1": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "ce1",
+        "pe1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "ce2",
+        "pe1"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "pe1",
+        "rr1"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "pe1"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 4,
+    "source_file": "test_bgp_accept_own.py"
+  }
+}

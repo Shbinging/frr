@@ -1,0 +1,42 @@
+{
+  "routers": {
+    "ce1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "ce2": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "ce3": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "ce4": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "ce5": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "ce6": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 8,
+    "total_switches": 0,
+    "source_file": "test_bgp_srv6l3vpn_to_bgp_vrf2.py"
+  }
+}

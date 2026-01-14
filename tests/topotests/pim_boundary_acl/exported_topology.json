@@ -1,0 +1,58 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw2",
+        "sw3"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "sw1"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "sw3"
+      ]
+    },
+    "rp": {
+      "type": "router",
+      "connected_switches": [
+        "sw2"
+      ]
+    }
+  },
+  "switches": {
+    "sw1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "sw2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "rp"
+      ]
+    },
+    "sw3": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 4,
+    "total_switches": 3,
+    "source_file": "test_pim_boundary_acl.py"
+  }
+}

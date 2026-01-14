@@ -1,0 +1,72 @@
+{
+  "routers": {
+    "h1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "h2": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "h3": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "h4": {
+      "type": "router",
+      "connected_switches": [
+        "s4"
+      ]
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h2"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h3"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h4"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 5,
+    "total_switches": 4,
+    "source_file": "test_multicast_gmp_route_map_topo1.py"
+  }
+}

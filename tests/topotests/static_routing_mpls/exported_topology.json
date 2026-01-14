@@ -1,0 +1,51 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "sw1",
+        "sw2"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "sw2",
+        "sw3",
+        "sw4"
+      ]
+    }
+  },
+  "switches": {
+    "sw1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1"
+      ]
+    },
+    "sw2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "sw3": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    },
+    "sw4": {
+      "type": "switch",
+      "connected_routers": [
+        "r2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 2,
+    "total_switches": 4,
+    "source_file": "test_static_routing_mpls.py"
+  }
+}

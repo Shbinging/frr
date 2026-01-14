@@ -1,0 +1,95 @@
+{
+  "routers": {
+    "ce1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "ce2": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    },
+    "ce3": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s4",
+        "s5"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s4",
+        "s6"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s5",
+        "s6"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "ce1",
+        "r1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "ce2",
+        "r2"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "ce3",
+        "r3"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 6,
+    "total_switches": 6,
+    "source_file": "test_ldp_sync_ospf_topo1.py"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "routers": {
+    "P1": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s3"
+      ]
+    },
+    "PE1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "PE2": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s4"
+      ]
+    },
+    "host1": {
+      "type": "router",
+      "connected_switches": [
+        "s1"
+      ]
+    },
+    "host2": {
+      "type": "router",
+      "connected_switches": [
+        "s4"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "host1",
+        "PE1"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "PE1",
+        "P1"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "P1",
+        "PE2"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "PE2",
+        "host2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 5,
+    "total_switches": 4,
+    "source_file": "test_bgp_evpn_vxlan_macvrf_soo.py"
+  }
+}

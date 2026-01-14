@@ -1,0 +1,72 @@
+{
+  "routers": {
+    "h1": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "h2": {
+      "type": "router",
+      "connected_switches": [
+        "s4"
+      ]
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s3"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s4"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "r3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h1"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r3",
+        "h2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 5,
+    "total_switches": 4,
+    "source_file": "test_msdp_mesh_topo1.py"
+  }
+}

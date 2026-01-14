@@ -1,0 +1,18 @@
+{
+  "routers": {
+    "r1": {
+      "type": "router",
+      "connected_switches": []
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": []
+    }
+  },
+  "switches": {},
+  "metadata": {
+    "total_routers": 2,
+    "total_switches": 0,
+    "source_file": "test_rip_default_metric.py"
+  }
+}

@@ -1,0 +1,284 @@
+Found 422 test directories
+======================================================================
+[  1/422] all_protocol_startup                     ✓ R:1 S:0
+[  2/422] babel_topo1                              ✓ R:3 S:4
+[  5/422] bfd_jitter_verification                  ✓ R:2 S:1
+[  8/422] bfd_static_vrf                           ✓ R:3 S:2
+[ 12/422] bfd_vrf_topo1                            ✓ R:4 S:3
+[ 13/422] bfd_vrflite_topo1                        ✓ R:2 S:3
+[ 14/422] bgp_accept_own                           ✓ R:4 S:4
+[ 15/422] bgp_addpath_best_selected                ✓ R:7 S:3
+[ 16/422] bgp_addpath_disable_rx                   ✓ R:6 S:3
+[ 19/422] bgp_addpath_paths_limit                  ✓ R:7 S:3
+[ 20/422] bgp_aggregate_address_matching_med       ✓ R:4 S:2
+[ 21/422] bgp_aggregate_address_origin             ✓ R:2 S:1
+[ 22/422] bgp_aggregate_address_route_map          ✓ R:2 S:1
+[ 23/422] bgp_aggregate_address_topo1              ✓ R:2 S:2
+[ 24/422] bgp_aggregate_address_zebra_announce     ✓ R:1 S:0
+[ 25/422] bgp_aggregator_zero                      ✓ R:1 S:1
+[ 26/422] bgp_aigp                                 ✓ R:8 S:8
+[ 27/422] bgp_aigp_rr                              ✓ R:4 S:4
+[ 30/422] bgp_as_override                          ✓ R:4 S:3
+[ 31/422] bgp_as_wide_bgp_identifier               ✓ R:3 S:1
+[ 32/422] bgp_asdot_regex                          ✓ R:2 S:1
+[ 33/422] bgp_aspath_list_policy_change            ✓ R:3 S:2
+[ 34/422] bgp_aspath_zero                          ✓ R:1 S:1
+[ 35/422] bgp_auth                                 ✓ R:3 S:0
+[ 37/422] bgp_bestpath_reason                      ✓ R:4 S:6
+[ 38/422] bgp_bfd_down_cease_notification          ✓ R:2 S:1
+[ 39/422] bgp_bfd_session                          ✓ R:1 S:1
+[ 40/422] bgp_blackhole_community                  ✓ R:4 S:3
+[ 41/422] bgp_bmp                                  ✓ R:5 S:1
+[ 42/422] bgp_cluster_length                       ✓ R:8 S:12
+[ 43/422] bgp_color_extcommunities                 ✓ R:2 S:1
+[ 44/422] bgp_comm_list_delete                     ✓ R:2 S:1
+[ 45/422] bgp_comm_list_match                      ✓ R:3 S:2
+[ 47/422] bgp_community_alias                      ✓ R:2 S:1
+[ 48/422] bgp_community_change_update              ✓ R:6 S:7
+[ 49/422] bgp_conditional_advertisement            ✓ R:3 S:2
+[ 51/422] bgp_conditional_advertisement_track_peer ✓ R:4 S:2
+[ 52/422] bgp_confed1                              ✓ R:4 S:3
+[ 57/422] bgp_default_afi_safi                     ✓ R:4 S:1
+[ 59/422] bgp_default_originate_timer              ✓ R:3 S:2
+[ 60/422] bgp_default_originate_withdraw           ✓ R:3 S:2
+[ 61/422] bgp_default_route                        ✓ R:2 S:1
+[ 62/422] bgp_default_route_route_map_match        ✓ R:2 S:1
+[ 63/422] bgp_default_route_route_map_match2       ✓ R:2 S:1
+[ 64/422] bgp_default_route_route_map_match_set    ✓ R:2 S:1
+[ 65/422] bgp_default_route_route_map_set          ✓ R:3 S:1
+[ 66/422] bgp_disable_addpath_rx                   ✓ R:4 S:2
+[ 67/422] bgp_distance_change                      ✓ R:2 S:1
+[ 69/422] bgp_dual_as                              ✓ R:2 S:1
+[ 70/422] bgp_duplicate_nexthop                    ✓ R:5 S:12
+[ 72/422] bgp_ebgp_common_subnet_nexthop_unchanged ✓ R:3 S:1
+[ 73/422] bgp_ebgp_requires_policy                 ✓ R:6 S:3
+[ 74/422] bgp_ecmp_topo1                           ✓ R:1 S:0
+[ 77/422] bgp_ecomm_list_match                     ✓ R:3 S:2
+[ 79/422] bgp_evpn_gr                              - Empty
+[ 81/422] bgp_evpn_mh                              ✓ R:12 S:20
+[ 82/422] bgp_evpn_overlay_index_gateway           - Empty
+[ 85/422] bgp_evpn_rt5                             ✓ R:3 S:4
+[ 87/422] bgp_evpn_rt5_implied                     - Empty
+[ 88/422] bgp_evpn_three_tier_clos_topo1           ✓ R:16 S:28
+[ 89/422] bgp_evpn_vxlan_macvrf_soo_topo1          ✓ R:5 S:4
+[ 90/422] bgp_evpn_vxlan_svd_topo1                 ✓ R:5 S:4
+[ 91/422] bgp_evpn_vxlan_topo1                     ✓ R:5 S:4
+[ 92/422] bgp_extcomm_list_delete                  ✓ R:2 S:1
+[ 95/422] bgp_features                             ✓ R:5 S:0
+[ 96/422] bgp_flowspec                             ✓ R:1 S:1
+[ 97/422] bgp_gr_fib_suppress                      ✓ R:3 S:3
+[101/422] bgp_gr_multihop                          ✓ R:3 S:0
+[102/422] bgp_gr_notification                      ✓ R:2 S:1
+[103/422] bgp_gr_restart_retain_routes             ✓ R:2 S:1
+[104/422] bgp_gshut                                ✓ R:5 S:4
+[108/422] bgp_invalid_nexthop                      ✓ R:1 S:1
+[109/422] bgp_ipv4_class_e_peer                    ✓ R:2 S:1
+[111/422] bgp_ipv6_link_local_capability           ✓ R:3 S:2
+[112/422] bgp_ipv6_ll_peering                      ✓ R:3 S:2
+[114/422] bgp_ipv6_rtadv                           ✓ R:2 S:1
+[115/422] bgp_l3vpn_hidden                         - Empty
+[116/422] bgp_l3vpn_label_export                   ✓ R:2 S:1
+[119/422] bgp_labeled_unicast_addpath              ✓ R:5 S:4
+[120/422] bgp_labeled_unicast_default_originate    ✓ R:2 S:1
+[121/422] bgp_large_comm_list_match                ✓ R:3 S:2
+[123/422] bgp_link_bw_ip                           ✓ R:10 S:0
+[124/422] bgp_listen_l3vrf                         ✓ R:2 S:2
+[126/422] bgp_llgr                                 ✓ R:6 S:4
+[127/422] bgp_local_as                             ✓ R:3 S:2
+[128/422] bgp_local_as_dotplus_private_remove      ✓ R:4 S:2
+[129/422] bgp_local_as_private_remove              ✓ R:4 S:2
+[132/422] bgp_lu_explicitnull                      ✓ R:2 S:3
+[133/422] bgp_lu_multiple_labels                   ✓ R:2 S:2
+[134/422] bgp_lu_topo1                             ✓ R:3 S:2
+[135/422] bgp_lu_topo2                             ✓ R:4 S:3
+[137/422] bgp_max_med_on_startup                   ✓ R:2 S:1
+[138/422] bgp_maximum_prefix_invalid_update        ✓ R:2 S:1
+[139/422] bgp_maximum_prefix_out                   ✓ R:2 S:1
+[140/422] bgp_maximum_prefix_restart               ✓ R:3 S:2
+[141/422] bgp_minimum_holdtime                     ✓ R:2 S:1
+[145/422] bgp_multiview_topo1                      ✓ R:1 S:2
+[146/422] bgp_nexthop_ipv6                         ✓ R:0 S:1
+[148/422] bgp_node_target_extcommunities           ✓ R:4 S:1
+[151/422] bgp_path_attribute_discard               ✓ R:2 S:1
+[152/422] bgp_path_attribute_treat_as_withdraw     ✓ R:2 S:1
+[154/422] bgp_path_selection                       ✓ R:3 S:2
+[156/422] bgp_peer_group                           ✓ R:4 S:3
+[158/422] bgp_peer_last_reset                      ✓ R:2 S:1
+[159/422] bgp_peer_shut                            ✓ R:1 S:0
+[161/422] bgp_peer_type_multipath_relax            ✓ R:2 S:0
+[162/422] bgp_peergroup_gshut                      - Empty
+[165/422] bgp_prefix_sid                           ✓ R:1 S:1
+[166/422] bgp_prefix_sid2                          ✓ R:1 S:1
+[169/422] bgp_redistribute_backup_ebgp             ✓ R:2 S:1
+[170/422] bgp_redistribute_table                   ✓ R:2 S:3
+[171/422] bgp_reject_as_sets                       ✓ R:4 S:3
+[174/422] bgp_remove_private_as                    ✓ R:5 S:6
+[175/422] bgp_remove_private_as_route_map          ✓ R:2 S:1
+[178/422] bgp_rmap_extcommunity_none               ✓ R:2 S:1
+[184/422] bgp_route_map_match_ipv6_nexthop         ✓ R:2 S:1
+[185/422] bgp_route_map_match_source_protocol      ✓ R:3 S:2
+[186/422] bgp_route_map_match_tag_untagged         ✓ R:1 S:1
+[187/422] bgp_route_map_on_match_next              ✓ R:2 S:1
+[188/422] bgp_route_map_vpn_import                 ✓ R:1 S:4
+[189/422] bgp_route_origin_parser                  ✓ R:1 S:0
+[190/422] bgp_route_server_client                  ✓ R:4 S:0
+[191/422] bgp_rpki_topo1                           ✓ R:4 S:3
+[192/422] bgp_rr_ibgp                              ✓ R:3 S:4
+[194/422] bgp_sender_as_path_loop_detection        ✓ R:3 S:2
+[195/422] bgp_set_aspath_exclude                   ✓ R:4 S:2
+[196/422] bgp_set_aspath_replace                   ✓ R:4 S:2
+[197/422] bgp_set_local_preference_add_subtract    ✓ R:3 S:1
+[200/422] bgp_show_l2vpn_evpn_rt                   ✓ R:0 S:1
+[202/422] bgp_snmp_bgp4v2_notification             ✓ R:2 S:1
+[203/422] bgp_snmp_bgp4v2mib                       ✓ R:4 S:1
+[204/422] bgp_snmp_mplsl3vpn                       ✓ R:8 S:10
+[206/422] bgp_soo                                  ✓ R:4 S:4
+[207/422] bgp_srv6_sid_explicit                    ✓ R:6 S:0
+[208/422] bgp_srv6_sid_reachability                ✓ R:9 S:0
+[210/422] bgp_srv6l3vpn_over_ipv6                  ✓ R:9 S:0
+[211/422] bgp_srv6l3vpn_route_leak                 ✓ R:2 S:0
+[212/422] bgp_srv6l3vpn_sid                        ✓ R:9 S:0
+[213/422] bgp_srv6l3vpn_to_bgp_vrf                 ✓ R:8 S:0
+[214/422] bgp_srv6l3vpn_to_bgp_vrf2                ✓ R:8 S:0
+[215/422] bgp_srv6l3vpn_to_bgp_vrf3                ✓ R:8 S:0
+[216/422] bgp_srv6l3vpn_to_bgp_vrf4                ✓ R:4 S:0
+[217/422] bgp_suppress_fib                         ✓ R:3 S:2
+[218/422] bgp_table_direct_topo1                   ✓ R:3 S:2
+[220/422] bgp_tcp_ip_transparent                   - Empty
+[221/422] bgp_tcp_mss                              ✓ R:2 S:2
+[222/422] bgp_tcp_mss_passive                      ✓ R:2 S:1
+[224/422] bgp_unnumbered                           ✓ R:2 S:1
+[225/422] bgp_update_delay                         ✓ R:5 S:4
+[227/422] bgp_vpn_5549_route_map                   ✓ R:4 S:3
+[228/422] bgp_vpn_import_nexthop_default_vrf       ✓ R:2 S:3
+[229/422] bgp_vpnv4_asbr                           ✓ R:8 S:6
+[230/422] bgp_vpnv4_ebgp                           ✓ R:4 S:4
+[231/422] bgp_vpnv4_ebgp_vpn_auto                  ✓ R:3 S:1
+[232/422] bgp_vpnv4_gre                            ✓ R:2 S:3
+[233/422] bgp_vpnv4_import_allowas_in              ✓ R:2 S:3
+[234/422] bgp_vpnv4_import_allowas_in_between_vrf  ✓ R:2 S:3
+[235/422] bgp_vpnv4_noretain                       ✓ R:2 S:8
+[236/422] bgp_vpnv4_per_nexthop_label              ✓ R:7 S:5
+[237/422] bgp_vpnv4_route_leak_basic               ✓ R:1 S:0
+[238/422] bgp_vpnv6_per_nexthop_label              ✓ R:7 S:5
+[239/422] bgp_vrf_different_asn                    ✓ R:1 S:1
+[243/422] bgp_vrf_import_route_map                 ✓ R:2 S:1
+[244/422] bgp_vrf_leaking_5549_routes              ✓ R:2 S:0
+[245/422] bgp_vrf_leaking_rt_change_route_maps     ✓ R:1 S:0
+[247/422] bgp_vrf_lite_ipv6_rtadv                  ✓ R:2 S:1
+[248/422] bgp_vrf_md5_peering                      ✓ R:1 S:1
+[249/422] bgp_vrf_netns                            ✓ R:1 S:1
+[250/422] bgp_vrf_route_leak_basic                 ✓ R:2 S:1
+[254/422] cspf_topo1                               ✓ R:4 S:5
+[256/422] eigrp_topo1                              ✓ R:3 S:4
+[257/422] evpn_pim_1                               ✓ R:5 S:4
+[260/422] example_test                             ✓ R:2 S:2
+[261/422] forwarding_on_off                        ✓ R:3 S:0
+[262/422] fpm_testing_topo1                        ✓ R:1 S:1
+[264/422] high_ecmp                                ✓ R:2 S:0
+[265/422] isis_advertise_high_metrics              ✓ R:0 S:4
+[266/422] isis_lfa_topo1                           ✓ R:0 S:11
+[267/422] isis_lsp_bits_topo1                      ✓ R:0 S:6
+[268/422] isis_rlfa_topo1                          ✓ R:0 S:8
+[269/422] isis_snmp                                ✓ R:6 S:6
+[270/422] isis_sr_flex_algo_topo1                  ✓ R:3 S:0
+[271/422] isis_sr_flex_algo_topo2                  ✓ R:10 S:0
+[272/422] isis_sr_te_topo1                         ✓ R:0 S:9
+[273/422] isis_sr_topo1                            ✓ R:0 S:8
+[274/422] isis_srv6_topo1                          ✓ R:7 S:9
+[275/422] isis_te_topo1                            ✓ R:4 S:5
+[276/422] isis_tilfa_topo1                         ✓ R:0 S:8
+[277/422] isis_topo1                               ✓ R:5 S:4
+[278/422] isis_topo1_vrf                           ✓ R:5 S:4
+[280/422] ldp_establish_hello_topo1                ✓ R:3 S:1
+[281/422] ldp_oc_acl_topo1                         ✓ R:4 S:3
+[282/422] ldp_oc_topo1                             ✓ R:4 S:3
+[283/422] ldp_snmp                                 ✓ R:6 S:6
+[284/422] ldp_sync_isis_topo1                      ✓ R:6 S:6
+[285/422] ldp_sync_ospf_topo1                      ✓ R:6 S:6
+[286/422] ldp_topo1                                ✓ R:4 S:3
+[287/422] ldp_vpls_topo1                           ✓ R:6 S:6
+[298/422] msdp_mesh_topo1                          ✓ R:5 S:4
+[299/422] msdp_topo1                               ✓ R:7 S:6
+[300/422] msdp_topo2                               ✓ R:7 S:7
+[301/422] msdp_topo3                               ✓ R:4 S:3
+[302/422] msdp_topo4                               ✓ R:5 S:5
+[303/422] multicast_features                       ✓ R:6 S:4
+[304/422] multicast_gmp_route_map_topo1            ✓ R:5 S:4
+[307/422] multicast_pim6_static_rp_topo1           - Empty
+[314/422] multicast_pim_static_rp_topo1            - Empty
+[319/422] multicast_ssm_topo1                      - Empty
+[321/422] nhrp_redundancy                          ✓ R:7 S:4
+[322/422] nhrp_topo                                ✓ R:4 S:5
+[323/422] ospf6_ecmp_inter_area                    ✓ R:9 S:0
+[324/422] ospf6_gr_topo1                           ✓ R:0 S:8
+[326/422] ospf6_point_to_multipoint                ✓ R:4 S:6
+[327/422] ospf6_topo1                              ✓ R:4 S:6
+[328/422] ospf6_topo1_vrf                          ✓ R:4 S:6
+[329/422] ospf6_topo2                              ✓ R:4 S:4
+[334/422] ospf_gr_topo1                            ✓ R:0 S:8
+[335/422] ospf_instance_redistribute               ✓ R:1 S:1
+[336/422] ospf_metric_propagation                  ✓ R:9 S:11
+[337/422] ospf_multi_instance                      ✓ R:3 S:2
+[338/422] ospf_multi_vrf_bgp_route_leak            ✓ R:4 S:7
+[339/422] ospf_netns_vrf                           ✓ R:3 S:4
+[340/422] ospf_nssa_topo1                          ✓ R:0 S:3
+[341/422] ospf_p2mp                                ✓ R:4 S:5
+[342/422] ospf_prefix_suppression                  ✓ R:3 S:7
+[343/422] ospf_prune_next_hop                      ✓ R:8 S:10
+[344/422] ospf_single_switch                       ✓ R:0 S:1
+[345/422] ospf_sr_te_topo1                         ✓ R:0 S:9
+[346/422] ospf_sr_topo1                            ✓ R:0 S:8
+[347/422] ospf_suppress_fa                         ✓ R:3 S:2
+[348/422] ospf_te_topo1                            ✓ R:4 S:0
+[349/422] ospf_tilfa_topo1                         ✓ R:0 S:5
+[350/422] ospf_topo1                               ✓ R:4 S:6
+[351/422] ospf_topo2                               ✓ R:4 S:0
+[352/422] ospf_unnumbered                          ✓ R:2 S:3
+[353/422] ospf_unnumbered_point_to_multipoint      ✓ R:3 S:4
+[356/422] ospfv3_route_map_forwarding              ✓ R:2 S:1
+[357/422] pbr_topo1                                ✓ R:1 S:0
+[358/422] pim_acl                                  ✓ R:7 S:0
+[359/422] pim_autorp                               ✓ R:4 S:0
+[360/422] pim_basic                                ✓ R:4 S:3
+[361/422] pim_basic_igmp_proxy                     ✓ R:4 S:3
+[362/422] pim_basic_topo2                          ✓ R:4 S:3
+[363/422] pim_boundary_acl                         ✓ R:4 S:3
+[364/422] pim_cand_rp_bsr                          ✓ R:6 S:5
+[365/422] pim_dense                                ✓ R:6 S:0
+[366/422] pim_embedded_rp                          ✓ R:5 S:5
+[367/422] pim_igmp_vrf                             ✓ R:6 S:0
+[368/422] pim_mrib                                 ✓ R:4 S:0
+[371/422] rip_default_metric                       ✓ R:2 S:0
+[372/422] rip_del_instance                         ✓ R:1 S:0
+[375/422] rip_topo1                                ✓ R:2 S:6
+[379/422] ripng_topo1                              ✓ R:2 S:6
+[382/422] sbfd_topo1                               ✓ R:2 S:1
+[389/422] srv6_sid_manager                         ✓ R:13 S:9
+[393/422] static_cross_vrf_nexthop                 ✓ R:1 S:1
+[395/422] static_routing_mpls                      ✓ R:2 S:4
+[402/422] tc_basic                                 ✓ R:2 S:2
+[403/422] two_layer_wucmp                          ✓ R:4 S:0
+[404/422] v6_nexthop_group_recursive_resolution    ✓ R:1 S:1
+[405/422] weighted_ecmp                            ✓ R:1 S:0
+[406/422] wucmp_bgp_diamond                        ✓ R:4 S:4
+[407/422] zebra_fec_nexthop_resolution             ✓ R:7 S:0
+[408/422] zebra_multiple_connected                 ✓ R:3 S:4
+[409/422] zebra_neigh                              ✓ R:1 S:1
+[411/422] zebra_nhg_check                          ✓ R:2 S:0
+[412/422] zebra_nht_resolution                     ✓ R:1 S:1
+[416/422] zebra_received_nhe_kept                  ✓ R:1 S:1
+[418/422] zebra_reserved_ranges                    ✓ R:1 S:1
+[419/422] zebra_rib                                ✓ R:1 S:0
+[422/422] zebra_startup_speeds                     ✓ R:1 S:0
+======================================================================
+
+Summary:
+  Successful:    262
+  Empty:           9
+  Failed:        151
+  Total:         422
+
+Summary saved to: /home/frr/de/frr/tests/topotests/export_summary.json
+
+✓ Successfully exported 262 topologies

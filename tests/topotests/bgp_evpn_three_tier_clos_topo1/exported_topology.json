@@ -1,0 +1,343 @@
+{
+  "routers": {
+    "bordertor-11": {
+      "type": "router",
+      "connected_switches": [
+        "s9",
+        "s11",
+        "s17",
+        "s19"
+      ]
+    },
+    "bordertor-12": {
+      "type": "router",
+      "connected_switches": [
+        "s10",
+        "s12",
+        "s18",
+        "s20"
+      ]
+    },
+    "ext-1": {
+      "type": "router",
+      "connected_switches": [
+        "s17",
+        "s18",
+        "s23",
+        "s24",
+        "s25",
+        "s26"
+      ]
+    },
+    "host-1": {
+      "type": "router",
+      "connected_switches": [
+        "s23",
+        "s24",
+        "s25",
+        "s26"
+      ]
+    },
+    "host-111": {
+      "type": "router",
+      "connected_switches": [
+        "s19"
+      ]
+    },
+    "host-121": {
+      "type": "router",
+      "connected_switches": [
+        "s20"
+      ]
+    },
+    "host-211": {
+      "type": "router",
+      "connected_switches": [
+        "s21",
+        "s27"
+      ]
+    },
+    "host-221": {
+      "type": "router",
+      "connected_switches": [
+        "s22",
+        "s28"
+      ]
+    },
+    "leaf-11": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s5",
+        "s9",
+        "s10"
+      ]
+    },
+    "leaf-12": {
+      "type": "router",
+      "connected_switches": [
+        "s2",
+        "s6",
+        "s11",
+        "s12"
+      ]
+    },
+    "leaf-21": {
+      "type": "router",
+      "connected_switches": [
+        "s3",
+        "s7",
+        "s13",
+        "s14"
+      ]
+    },
+    "leaf-22": {
+      "type": "router",
+      "connected_switches": [
+        "s4",
+        "s8",
+        "s15",
+        "s16"
+      ]
+    },
+    "spine-1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "spine-2": {
+      "type": "router",
+      "connected_switches": [
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    "tor-21": {
+      "type": "router",
+      "connected_switches": [
+        "s13",
+        "s15",
+        "s21",
+        "s27"
+      ]
+    },
+    "tor-22": {
+      "type": "router",
+      "connected_switches": [
+        "s14",
+        "s16",
+        "s22",
+        "s28"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-1",
+        "leaf-11"
+      ]
+    },
+    "s10": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-11",
+        "bordertor-12"
+      ]
+    },
+    "s11": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-12",
+        "bordertor-11"
+      ]
+    },
+    "s12": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-12",
+        "bordertor-12"
+      ]
+    },
+    "s13": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-21",
+        "tor-21"
+      ]
+    },
+    "s14": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-21",
+        "tor-22"
+      ]
+    },
+    "s15": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-22",
+        "tor-21"
+      ]
+    },
+    "s16": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-22",
+        "tor-22"
+      ]
+    },
+    "s17": {
+      "type": "switch",
+      "connected_routers": [
+        "bordertor-11",
+        "ext-1"
+      ]
+    },
+    "s18": {
+      "type": "switch",
+      "connected_routers": [
+        "bordertor-12",
+        "ext-1"
+      ]
+    },
+    "s19": {
+      "type": "switch",
+      "connected_routers": [
+        "bordertor-11",
+        "host-111"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-1",
+        "leaf-12"
+      ]
+    },
+    "s20": {
+      "type": "switch",
+      "connected_routers": [
+        "bordertor-12",
+        "host-121"
+      ]
+    },
+    "s21": {
+      "type": "switch",
+      "connected_routers": [
+        "tor-21",
+        "host-211"
+      ]
+    },
+    "s22": {
+      "type": "switch",
+      "connected_routers": [
+        "tor-22",
+        "host-221"
+      ]
+    },
+    "s23": {
+      "type": "switch",
+      "connected_routers": [
+        "ext-1",
+        "host-1"
+      ]
+    },
+    "s24": {
+      "type": "switch",
+      "connected_routers": [
+        "ext-1",
+        "host-1"
+      ]
+    },
+    "s25": {
+      "type": "switch",
+      "connected_routers": [
+        "ext-1",
+        "host-1"
+      ]
+    },
+    "s26": {
+      "type": "switch",
+      "connected_routers": [
+        "ext-1",
+        "host-1"
+      ]
+    },
+    "s27": {
+      "type": "switch",
+      "connected_routers": [
+        "tor-21",
+        "host-211"
+      ]
+    },
+    "s28": {
+      "type": "switch",
+      "connected_routers": [
+        "tor-22",
+        "host-221"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-1",
+        "leaf-21"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-1",
+        "leaf-22"
+      ]
+    },
+    "s5": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-2",
+        "leaf-11"
+      ]
+    },
+    "s6": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-2",
+        "leaf-12"
+      ]
+    },
+    "s7": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-2",
+        "leaf-21"
+      ]
+    },
+    "s8": {
+      "type": "switch",
+      "connected_routers": [
+        "spine-2",
+        "leaf-22"
+      ]
+    },
+    "s9": {
+      "type": "switch",
+      "connected_routers": [
+        "leaf-11",
+        "bordertor-11"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 16,
+    "total_switches": 28,
+    "source_file": "test_bgp_evpn_v4_v6_vtep.py"
+  }
+}

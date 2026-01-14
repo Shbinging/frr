@@ -1,0 +1,79 @@
+{
+  "routers": {
+    "h1": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "h2": {
+      "type": "router",
+      "connected_switches": [
+        "s4"
+      ]
+    },
+    "h3": {
+      "type": "router",
+      "connected_switches": [
+        "s3"
+      ]
+    },
+    "r1": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "r2": {
+      "type": "router",
+      "connected_switches": [
+        "s1",
+        "s4"
+      ]
+    },
+    "r3": {
+      "type": "router",
+      "connected_switches": [
+        "s2"
+      ]
+    }
+  },
+  "switches": {
+    "s1": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r2"
+      ]
+    },
+    "s2": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "r3"
+      ]
+    },
+    "s3": {
+      "type": "switch",
+      "connected_routers": [
+        "r1",
+        "h1",
+        "h3"
+      ]
+    },
+    "s4": {
+      "type": "switch",
+      "connected_routers": [
+        "r2",
+        "h2"
+      ]
+    }
+  },
+  "metadata": {
+    "total_routers": 6,
+    "total_switches": 4,
+    "source_file": "test_multicast_features.py"
+  }
+}

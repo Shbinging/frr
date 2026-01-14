@@ -1,0 +1,14 @@
+{
+  "routers": {},
+  "switches": {
+    "sw": {
+      "type": "switch",
+      "connected_routers": []
+    }
+  },
+  "metadata": {
+    "total_routers": 0,
+    "total_switches": 1,
+    "source_file": "test_bgp_nexthop_ipv6_topo1.py"
+  }
+}

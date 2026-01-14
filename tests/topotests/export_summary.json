@@ -1,0 +1,2214 @@
+{
+  "success": [
+    {
+      "name": "all_protocol_startup",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/all_protocol_startup/exported_topology.json"
+    },
+    {
+      "name": "babel_topo1",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/babel_topo1/exported_topology.json"
+    },
+    {
+      "name": "bfd_jitter_verification",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bfd_jitter_verification/exported_topology.json"
+    },
+    {
+      "name": "bfd_static_vrf",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bfd_static_vrf/exported_topology.json"
+    },
+    {
+      "name": "bfd_vrf_topo1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bfd_vrf_topo1/exported_topology.json"
+    },
+    {
+      "name": "bfd_vrflite_topo1",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bfd_vrflite_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_accept_own",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_accept_own/exported_topology.json"
+    },
+    {
+      "name": "bgp_addpath_best_selected",
+      "routers": 7,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_addpath_best_selected/exported_topology.json"
+    },
+    {
+      "name": "bgp_addpath_disable_rx",
+      "routers": 6,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_addpath_disable_rx/exported_topology.json"
+    },
+    {
+      "name": "bgp_addpath_paths_limit",
+      "routers": 7,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_addpath_paths_limit/exported_topology.json"
+    },
+    {
+      "name": "bgp_aggregate_address_matching_med",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aggregate_address_matching_med/exported_topology.json"
+    },
+    {
+      "name": "bgp_aggregate_address_origin",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aggregate_address_origin/exported_topology.json"
+    },
+    {
+      "name": "bgp_aggregate_address_route_map",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aggregate_address_route_map/exported_topology.json"
+    },
+    {
+      "name": "bgp_aggregate_address_topo1",
+      "routers": 2,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aggregate_address_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_aggregate_address_zebra_announce",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aggregate_address_zebra_announce/exported_topology.json"
+    },
+    {
+      "name": "bgp_aggregator_zero",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aggregator_zero/exported_topology.json"
+    },
+    {
+      "name": "bgp_aigp",
+      "routers": 8,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aigp/exported_topology.json"
+    },
+    {
+      "name": "bgp_aigp_rr",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aigp_rr/exported_topology.json"
+    },
+    {
+      "name": "bgp_as_override",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_as_override/exported_topology.json"
+    },
+    {
+      "name": "bgp_as_wide_bgp_identifier",
+      "routers": 3,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_as_wide_bgp_identifier/exported_topology.json"
+    },
+    {
+      "name": "bgp_asdot_regex",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_asdot_regex/exported_topology.json"
+    },
+    {
+      "name": "bgp_aspath_list_policy_change",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aspath_list_policy_change/exported_topology.json"
+    },
+    {
+      "name": "bgp_aspath_zero",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_aspath_zero/exported_topology.json"
+    },
+    {
+      "name": "bgp_auth",
+      "routers": 3,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_auth/exported_topology.json"
+    },
+    {
+      "name": "bgp_bestpath_reason",
+      "routers": 4,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_bestpath_reason/exported_topology.json"
+    },
+    {
+      "name": "bgp_bfd_down_cease_notification",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_bfd_down_cease_notification/exported_topology.json"
+    },
+    {
+      "name": "bgp_bfd_session",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_bfd_session/exported_topology.json"
+    },
+    {
+      "name": "bgp_blackhole_community",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_blackhole_community/exported_topology.json"
+    },
+    {
+      "name": "bgp_bmp",
+      "routers": 5,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_bmp/exported_topology.json"
+    },
+    {
+      "name": "bgp_cluster_length",
+      "routers": 8,
+      "switches": 12,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_cluster_length/exported_topology.json"
+    },
+    {
+      "name": "bgp_color_extcommunities",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_color_extcommunities/exported_topology.json"
+    },
+    {
+      "name": "bgp_comm_list_delete",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_comm_list_delete/exported_topology.json"
+    },
+    {
+      "name": "bgp_comm_list_match",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_comm_list_match/exported_topology.json"
+    },
+    {
+      "name": "bgp_community_alias",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_community_alias/exported_topology.json"
+    },
+    {
+      "name": "bgp_community_change_update",
+      "routers": 6,
+      "switches": 7,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_community_change_update/exported_topology.json"
+    },
+    {
+      "name": "bgp_conditional_advertisement",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_conditional_advertisement/exported_topology.json"
+    },
+    {
+      "name": "bgp_conditional_advertisement_track_peer",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_conditional_advertisement_track_peer/exported_topology.json"
+    },
+    {
+      "name": "bgp_confed1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_confed1/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_afi_safi",
+      "routers": 4,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_afi_safi/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_originate_timer",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_originate_timer/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_originate_withdraw",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_originate_withdraw/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_route",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_route/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_route_route_map_match",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_route_route_map_match/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_route_route_map_match2",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_route_route_map_match2/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_route_route_map_match_set",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_route_route_map_match_set/exported_topology.json"
+    },
+    {
+      "name": "bgp_default_route_route_map_set",
+      "routers": 3,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_default_route_route_map_set/exported_topology.json"
+    },
+    {
+      "name": "bgp_disable_addpath_rx",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_disable_addpath_rx/exported_topology.json"
+    },
+    {
+      "name": "bgp_distance_change",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_distance_change/exported_topology.json"
+    },
+    {
+      "name": "bgp_dual_as",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_dual_as/exported_topology.json"
+    },
+    {
+      "name": "bgp_duplicate_nexthop",
+      "routers": 5,
+      "switches": 12,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_duplicate_nexthop/exported_topology.json"
+    },
+    {
+      "name": "bgp_ebgp_common_subnet_nexthop_unchanged",
+      "routers": 3,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ebgp_common_subnet_nexthop_unchanged/exported_topology.json"
+    },
+    {
+      "name": "bgp_ebgp_requires_policy",
+      "routers": 6,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ebgp_requires_policy/exported_topology.json"
+    },
+    {
+      "name": "bgp_ecmp_topo1",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ecmp_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_ecomm_list_match",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ecomm_list_match/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_gr",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_gr/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_mh",
+      "routers": 12,
+      "switches": 20,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_mh/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_rt5",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_rt5/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_three_tier_clos_topo1",
+      "routers": 16,
+      "switches": 28,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_three_tier_clos_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_vxlan_macvrf_soo_topo1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_vxlan_macvrf_soo_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_vxlan_svd_topo1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_vxlan_svd_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_evpn_vxlan_topo1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_evpn_vxlan_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_extcomm_list_delete",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_extcomm_list_delete/exported_topology.json"
+    },
+    {
+      "name": "bgp_features",
+      "routers": 5,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_features/exported_topology.json"
+    },
+    {
+      "name": "bgp_flowspec",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_flowspec/exported_topology.json"
+    },
+    {
+      "name": "bgp_gr_fib_suppress",
+      "routers": 3,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_gr_fib_suppress/exported_topology.json"
+    },
+    {
+      "name": "bgp_gr_multihop",
+      "routers": 3,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_gr_multihop/exported_topology.json"
+    },
+    {
+      "name": "bgp_gr_notification",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_gr_notification/exported_topology.json"
+    },
+    {
+      "name": "bgp_gr_restart_retain_routes",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_gr_restart_retain_routes/exported_topology.json"
+    },
+    {
+      "name": "bgp_gshut",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_gshut/exported_topology.json"
+    },
+    {
+      "name": "bgp_invalid_nexthop",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_invalid_nexthop/exported_topology.json"
+    },
+    {
+      "name": "bgp_ipv4_class_e_peer",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ipv4_class_e_peer/exported_topology.json"
+    },
+    {
+      "name": "bgp_ipv6_link_local_capability",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ipv6_link_local_capability/exported_topology.json"
+    },
+    {
+      "name": "bgp_ipv6_ll_peering",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ipv6_ll_peering/exported_topology.json"
+    },
+    {
+      "name": "bgp_ipv6_rtadv",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_ipv6_rtadv/exported_topology.json"
+    },
+    {
+      "name": "bgp_l3vpn_label_export",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_l3vpn_label_export/exported_topology.json"
+    },
+    {
+      "name": "bgp_labeled_unicast_addpath",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_labeled_unicast_addpath/exported_topology.json"
+    },
+    {
+      "name": "bgp_labeled_unicast_default_originate",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_labeled_unicast_default_originate/exported_topology.json"
+    },
+    {
+      "name": "bgp_large_comm_list_match",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_large_comm_list_match/exported_topology.json"
+    },
+    {
+      "name": "bgp_link_bw_ip",
+      "routers": 10,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_link_bw_ip/exported_topology.json"
+    },
+    {
+      "name": "bgp_listen_l3vrf",
+      "routers": 2,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_listen_l3vrf/exported_topology.json"
+    },
+    {
+      "name": "bgp_llgr",
+      "routers": 6,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_llgr/exported_topology.json"
+    },
+    {
+      "name": "bgp_local_as",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_local_as/exported_topology.json"
+    },
+    {
+      "name": "bgp_local_as_dotplus_private_remove",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_local_as_dotplus_private_remove/exported_topology.json"
+    },
+    {
+      "name": "bgp_local_as_private_remove",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_local_as_private_remove/exported_topology.json"
+    },
+    {
+      "name": "bgp_lu_explicitnull",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_lu_explicitnull/exported_topology.json"
+    },
+    {
+      "name": "bgp_lu_multiple_labels",
+      "routers": 2,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_lu_multiple_labels/exported_topology.json"
+    },
+    {
+      "name": "bgp_lu_topo1",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_lu_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_lu_topo2",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_lu_topo2/exported_topology.json"
+    },
+    {
+      "name": "bgp_max_med_on_startup",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_max_med_on_startup/exported_topology.json"
+    },
+    {
+      "name": "bgp_maximum_prefix_invalid_update",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_maximum_prefix_invalid_update/exported_topology.json"
+    },
+    {
+      "name": "bgp_maximum_prefix_out",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_maximum_prefix_out/exported_topology.json"
+    },
+    {
+      "name": "bgp_maximum_prefix_restart",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_maximum_prefix_restart/exported_topology.json"
+    },
+    {
+      "name": "bgp_minimum_holdtime",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_minimum_holdtime/exported_topology.json"
+    },
+    {
+      "name": "bgp_multiview_topo1",
+      "routers": 1,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_multiview_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_nexthop_ipv6",
+      "routers": 0,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_nexthop_ipv6/exported_topology.json"
+    },
+    {
+      "name": "bgp_node_target_extcommunities",
+      "routers": 4,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_node_target_extcommunities/exported_topology.json"
+    },
+    {
+      "name": "bgp_path_attribute_discard",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_path_attribute_discard/exported_topology.json"
+    },
+    {
+      "name": "bgp_path_attribute_treat_as_withdraw",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_path_attribute_treat_as_withdraw/exported_topology.json"
+    },
+    {
+      "name": "bgp_path_selection",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_path_selection/exported_topology.json"
+    },
+    {
+      "name": "bgp_peer_group",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_peer_group/exported_topology.json"
+    },
+    {
+      "name": "bgp_peer_last_reset",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_peer_last_reset/exported_topology.json"
+    },
+    {
+      "name": "bgp_peer_shut",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_peer_shut/exported_topology.json"
+    },
+    {
+      "name": "bgp_peer_type_multipath_relax",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_peer_type_multipath_relax/exported_topology.json"
+    },
+    {
+      "name": "bgp_prefix_sid",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_prefix_sid/exported_topology.json"
+    },
+    {
+      "name": "bgp_prefix_sid2",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_prefix_sid2/exported_topology.json"
+    },
+    {
+      "name": "bgp_redistribute_backup_ebgp",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_redistribute_backup_ebgp/exported_topology.json"
+    },
+    {
+      "name": "bgp_redistribute_table",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_redistribute_table/exported_topology.json"
+    },
+    {
+      "name": "bgp_reject_as_sets",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_reject_as_sets/exported_topology.json"
+    },
+    {
+      "name": "bgp_remove_private_as",
+      "routers": 5,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_remove_private_as/exported_topology.json"
+    },
+    {
+      "name": "bgp_remove_private_as_route_map",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_remove_private_as_route_map/exported_topology.json"
+    },
+    {
+      "name": "bgp_rmap_extcommunity_none",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_rmap_extcommunity_none/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_map_match_ipv6_nexthop",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_map_match_ipv6_nexthop/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_map_match_source_protocol",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_map_match_source_protocol/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_map_match_tag_untagged",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_map_match_tag_untagged/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_map_on_match_next",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_map_on_match_next/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_map_vpn_import",
+      "routers": 1,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_map_vpn_import/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_origin_parser",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_origin_parser/exported_topology.json"
+    },
+    {
+      "name": "bgp_route_server_client",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_route_server_client/exported_topology.json"
+    },
+    {
+      "name": "bgp_rpki_topo1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_rpki_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_rr_ibgp",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_rr_ibgp/exported_topology.json"
+    },
+    {
+      "name": "bgp_sender_as_path_loop_detection",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_sender_as_path_loop_detection/exported_topology.json"
+    },
+    {
+      "name": "bgp_set_aspath_exclude",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_set_aspath_exclude/exported_topology.json"
+    },
+    {
+      "name": "bgp_set_aspath_replace",
+      "routers": 4,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_set_aspath_replace/exported_topology.json"
+    },
+    {
+      "name": "bgp_set_local_preference_add_subtract",
+      "routers": 3,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_set_local_preference_add_subtract/exported_topology.json"
+    },
+    {
+      "name": "bgp_show_l2vpn_evpn_rt",
+      "routers": 0,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_show_l2vpn_evpn_rt/exported_topology.json"
+    },
+    {
+      "name": "bgp_snmp_bgp4v2_notification",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_snmp_bgp4v2_notification/exported_topology.json"
+    },
+    {
+      "name": "bgp_snmp_bgp4v2mib",
+      "routers": 4,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_snmp_bgp4v2mib/exported_topology.json"
+    },
+    {
+      "name": "bgp_snmp_mplsl3vpn",
+      "routers": 8,
+      "switches": 10,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_snmp_mplsl3vpn/exported_topology.json"
+    },
+    {
+      "name": "bgp_soo",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_soo/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6_sid_explicit",
+      "routers": 6,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6_sid_explicit/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6_sid_reachability",
+      "routers": 9,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6_sid_reachability/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_over_ipv6",
+      "routers": 9,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_over_ipv6/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_route_leak",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_route_leak/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_sid",
+      "routers": 9,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_sid/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_to_bgp_vrf",
+      "routers": 8,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_to_bgp_vrf/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_to_bgp_vrf2",
+      "routers": 8,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_to_bgp_vrf2/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_to_bgp_vrf3",
+      "routers": 8,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_to_bgp_vrf3/exported_topology.json"
+    },
+    {
+      "name": "bgp_srv6l3vpn_to_bgp_vrf4",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_srv6l3vpn_to_bgp_vrf4/exported_topology.json"
+    },
+    {
+      "name": "bgp_suppress_fib",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_suppress_fib/exported_topology.json"
+    },
+    {
+      "name": "bgp_table_direct_topo1",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_table_direct_topo1/exported_topology.json"
+    },
+    {
+      "name": "bgp_tcp_mss",
+      "routers": 2,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_tcp_mss/exported_topology.json"
+    },
+    {
+      "name": "bgp_tcp_mss_passive",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_tcp_mss_passive/exported_topology.json"
+    },
+    {
+      "name": "bgp_unnumbered",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_unnumbered/exported_topology.json"
+    },
+    {
+      "name": "bgp_update_delay",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_update_delay/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpn_5549_route_map",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpn_5549_route_map/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpn_import_nexthop_default_vrf",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpn_import_nexthop_default_vrf/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_asbr",
+      "routers": 8,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_asbr/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_ebgp",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_ebgp/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_ebgp_vpn_auto",
+      "routers": 3,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_ebgp_vpn_auto/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_gre",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_gre/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_import_allowas_in",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_import_allowas_in/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_import_allowas_in_between_vrf",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_import_allowas_in_between_vrf/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_noretain",
+      "routers": 2,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_noretain/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_per_nexthop_label",
+      "routers": 7,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_per_nexthop_label/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv4_route_leak_basic",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv4_route_leak_basic/exported_topology.json"
+    },
+    {
+      "name": "bgp_vpnv6_per_nexthop_label",
+      "routers": 7,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vpnv6_per_nexthop_label/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_different_asn",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_different_asn/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_import_route_map",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_import_route_map/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_leaking_5549_routes",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_leaking_5549_routes/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_leaking_rt_change_route_maps",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_leaking_rt_change_route_maps/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_lite_ipv6_rtadv",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_lite_ipv6_rtadv/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_md5_peering",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_md5_peering/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_netns",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_netns/exported_topology.json"
+    },
+    {
+      "name": "bgp_vrf_route_leak_basic",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/bgp_vrf_route_leak_basic/exported_topology.json"
+    },
+    {
+      "name": "cspf_topo1",
+      "routers": 4,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/cspf_topo1/exported_topology.json"
+    },
+    {
+      "name": "eigrp_topo1",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/eigrp_topo1/exported_topology.json"
+    },
+    {
+      "name": "evpn_pim_1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/evpn_pim_1/exported_topology.json"
+    },
+    {
+      "name": "example_test",
+      "routers": 2,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/example_test/exported_topology.json"
+    },
+    {
+      "name": "forwarding_on_off",
+      "routers": 3,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/forwarding_on_off/exported_topology.json"
+    },
+    {
+      "name": "fpm_testing_topo1",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/fpm_testing_topo1/exported_topology.json"
+    },
+    {
+      "name": "high_ecmp",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/high_ecmp/exported_topology.json"
+    },
+    {
+      "name": "isis_advertise_high_metrics",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/isis_advertise_high_metrics/exported_topology.json"
+    },
+    {
+      "name": "isis_lfa_topo1",
+      "routers": 7,
+      "switches": 11,
+      "output": "/home/frr/de/frr/tests/topotests/isis_lfa_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_lsp_bits_topo1",
+      "routers": 6,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/isis_lsp_bits_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_rlfa_topo1",
+      "routers": 8,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/isis_rlfa_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_snmp",
+      "routers": 6,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/isis_snmp/exported_topology.json"
+    },
+    {
+      "name": "isis_sr_flex_algo_topo1",
+      "routers": 3,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/isis_sr_flex_algo_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_sr_flex_algo_topo2",
+      "routers": 10,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/isis_sr_flex_algo_topo2/exported_topology.json"
+    },
+    {
+      "name": "isis_sr_te_topo1",
+      "routers": 7,
+      "switches": 9,
+      "output": "/home/frr/de/frr/tests/topotests/isis_sr_te_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_sr_topo1",
+      "routers": 6,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/isis_sr_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_srv6_topo1",
+      "routers": 7,
+      "switches": 9,
+      "output": "/home/frr/de/frr/tests/topotests/isis_srv6_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_te_topo1",
+      "routers": 4,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/isis_te_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_tilfa_topo1",
+      "routers": 6,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/isis_tilfa_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_topo1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/isis_topo1/exported_topology.json"
+    },
+    {
+      "name": "isis_topo1_vrf",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/isis_topo1_vrf/exported_topology.json"
+    },
+    {
+      "name": "ldp_establish_hello_topo1",
+      "routers": 3,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_establish_hello_topo1/exported_topology.json"
+    },
+    {
+      "name": "ldp_oc_acl_topo1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_oc_acl_topo1/exported_topology.json"
+    },
+    {
+      "name": "ldp_oc_topo1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_oc_topo1/exported_topology.json"
+    },
+    {
+      "name": "ldp_snmp",
+      "routers": 6,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_snmp/exported_topology.json"
+    },
+    {
+      "name": "ldp_sync_isis_topo1",
+      "routers": 6,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_sync_isis_topo1/exported_topology.json"
+    },
+    {
+      "name": "ldp_sync_ospf_topo1",
+      "routers": 6,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_sync_ospf_topo1/exported_topology.json"
+    },
+    {
+      "name": "ldp_topo1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_topo1/exported_topology.json"
+    },
+    {
+      "name": "ldp_vpls_topo1",
+      "routers": 6,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ldp_vpls_topo1/exported_topology.json"
+    },
+    {
+      "name": "msdp_mesh_topo1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/msdp_mesh_topo1/exported_topology.json"
+    },
+    {
+      "name": "msdp_topo1",
+      "routers": 7,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/msdp_topo1/exported_topology.json"
+    },
+    {
+      "name": "msdp_topo2",
+      "routers": 7,
+      "switches": 7,
+      "output": "/home/frr/de/frr/tests/topotests/msdp_topo2/exported_topology.json"
+    },
+    {
+      "name": "msdp_topo3",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/msdp_topo3/exported_topology.json"
+    },
+    {
+      "name": "msdp_topo4",
+      "routers": 5,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/msdp_topo4/exported_topology.json"
+    },
+    {
+      "name": "multicast_features",
+      "routers": 6,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/multicast_features/exported_topology.json"
+    },
+    {
+      "name": "multicast_gmp_route_map_topo1",
+      "routers": 5,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/multicast_gmp_route_map_topo1/exported_topology.json"
+    },
+    {
+      "name": "nhrp_redundancy",
+      "routers": 7,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/nhrp_redundancy/exported_topology.json"
+    },
+    {
+      "name": "nhrp_topo",
+      "routers": 4,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/nhrp_topo/exported_topology.json"
+    },
+    {
+      "name": "ospf6_ecmp_inter_area",
+      "routers": 9,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/ospf6_ecmp_inter_area/exported_topology.json"
+    },
+    {
+      "name": "ospf6_gr_topo1",
+      "routers": 7,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/ospf6_gr_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf6_point_to_multipoint",
+      "routers": 4,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ospf6_point_to_multipoint/exported_topology.json"
+    },
+    {
+      "name": "ospf6_topo1",
+      "routers": 4,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ospf6_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf6_topo1_vrf",
+      "routers": 4,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ospf6_topo1_vrf/exported_topology.json"
+    },
+    {
+      "name": "ospf6_topo2",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/ospf6_topo2/exported_topology.json"
+    },
+    {
+      "name": "ospf_gr_topo1",
+      "routers": 7,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_gr_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_instance_redistribute",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_instance_redistribute/exported_topology.json"
+    },
+    {
+      "name": "ospf_metric_propagation",
+      "routers": 9,
+      "switches": 11,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_metric_propagation/exported_topology.json"
+    },
+    {
+      "name": "ospf_multi_instance",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_multi_instance/exported_topology.json"
+    },
+    {
+      "name": "ospf_multi_vrf_bgp_route_leak",
+      "routers": 4,
+      "switches": 7,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_multi_vrf_bgp_route_leak/exported_topology.json"
+    },
+    {
+      "name": "ospf_netns_vrf",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_netns_vrf/exported_topology.json"
+    },
+    {
+      "name": "ospf_nssa_topo1",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_nssa_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_p2mp",
+      "routers": 4,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_p2mp/exported_topology.json"
+    },
+    {
+      "name": "ospf_prefix_suppression",
+      "routers": 3,
+      "switches": 7,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_prefix_suppression/exported_topology.json"
+    },
+    {
+      "name": "ospf_prune_next_hop",
+      "routers": 8,
+      "switches": 10,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_prune_next_hop/exported_topology.json"
+    },
+    {
+      "name": "ospf_single_switch",
+      "routers": 0,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_single_switch/exported_topology.json"
+    },
+    {
+      "name": "ospf_sr_te_topo1",
+      "routers": 7,
+      "switches": 9,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_sr_te_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_sr_topo1",
+      "routers": 6,
+      "switches": 8,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_sr_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_suppress_fa",
+      "routers": 3,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_suppress_fa/exported_topology.json"
+    },
+    {
+      "name": "ospf_te_topo1",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_te_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_tilfa_topo1",
+      "routers": 5,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_tilfa_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_topo1",
+      "routers": 4,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_topo1/exported_topology.json"
+    },
+    {
+      "name": "ospf_topo2",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_topo2/exported_topology.json"
+    },
+    {
+      "name": "ospf_unnumbered",
+      "routers": 2,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_unnumbered/exported_topology.json"
+    },
+    {
+      "name": "ospf_unnumbered_point_to_multipoint",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/ospf_unnumbered_point_to_multipoint/exported_topology.json"
+    },
+    {
+      "name": "ospfv3_route_map_forwarding",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/ospfv3_route_map_forwarding/exported_topology.json"
+    },
+    {
+      "name": "pbr_topo1",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/pbr_topo1/exported_topology.json"
+    },
+    {
+      "name": "pim_acl",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/pim_acl/exported_topology.json"
+    },
+    {
+      "name": "pim_autorp",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/pim_autorp/exported_topology.json"
+    },
+    {
+      "name": "pim_basic",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/pim_basic/exported_topology.json"
+    },
+    {
+      "name": "pim_basic_igmp_proxy",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/pim_basic_igmp_proxy/exported_topology.json"
+    },
+    {
+      "name": "pim_basic_topo2",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/pim_basic_topo2/exported_topology.json"
+    },
+    {
+      "name": "pim_boundary_acl",
+      "routers": 4,
+      "switches": 3,
+      "output": "/home/frr/de/frr/tests/topotests/pim_boundary_acl/exported_topology.json"
+    },
+    {
+      "name": "pim_cand_rp_bsr",
+      "routers": 6,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/pim_cand_rp_bsr/exported_topology.json"
+    },
+    {
+      "name": "pim_dense",
+      "routers": 6,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/pim_dense/exported_topology.json"
+    },
+    {
+      "name": "pim_embedded_rp",
+      "routers": 5,
+      "switches": 5,
+      "output": "/home/frr/de/frr/tests/topotests/pim_embedded_rp/exported_topology.json"
+    },
+    {
+      "name": "pim_igmp_vrf",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/pim_igmp_vrf/exported_topology.json"
+    },
+    {
+      "name": "pim_mrib",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/pim_mrib/exported_topology.json"
+    },
+    {
+      "name": "rip_default_metric",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/rip_default_metric/exported_topology.json"
+    },
+    {
+      "name": "rip_del_instance",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/rip_del_instance/exported_topology.json"
+    },
+    {
+      "name": "rip_topo1",
+      "routers": 3,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/rip_topo1/exported_topology.json"
+    },
+    {
+      "name": "ripng_topo1",
+      "routers": 3,
+      "switches": 6,
+      "output": "/home/frr/de/frr/tests/topotests/ripng_topo1/exported_topology.json"
+    },
+    {
+      "name": "sbfd_topo1",
+      "routers": 2,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/sbfd_topo1/exported_topology.json"
+    },
+    {
+      "name": "srv6_sid_manager",
+      "routers": 13,
+      "switches": 9,
+      "output": "/home/frr/de/frr/tests/topotests/srv6_sid_manager/exported_topology.json"
+    },
+    {
+      "name": "static_cross_vrf_nexthop",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/static_cross_vrf_nexthop/exported_topology.json"
+    },
+    {
+      "name": "static_routing_mpls",
+      "routers": 2,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/static_routing_mpls/exported_topology.json"
+    },
+    {
+      "name": "tc_basic",
+      "routers": 2,
+      "switches": 2,
+      "output": "/home/frr/de/frr/tests/topotests/tc_basic/exported_topology.json"
+    },
+    {
+      "name": "two_layer_wucmp",
+      "routers": 4,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/two_layer_wucmp/exported_topology.json"
+    },
+    {
+      "name": "v6_nexthop_group_recursive_resolution",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/v6_nexthop_group_recursive_resolution/exported_topology.json"
+    },
+    {
+      "name": "weighted_ecmp",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/weighted_ecmp/exported_topology.json"
+    },
+    {
+      "name": "wucmp_bgp_diamond",
+      "routers": 4,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/wucmp_bgp_diamond/exported_topology.json"
+    },
+    {
+      "name": "zebra_fec_nexthop_resolution",
+      "routers": 7,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_fec_nexthop_resolution/exported_topology.json"
+    },
+    {
+      "name": "zebra_multiple_connected",
+      "routers": 3,
+      "switches": 4,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_multiple_connected/exported_topology.json"
+    },
+    {
+      "name": "zebra_neigh",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_neigh/exported_topology.json"
+    },
+    {
+      "name": "zebra_nhg_check",
+      "routers": 2,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_nhg_check/exported_topology.json"
+    },
+    {
+      "name": "zebra_nht_resolution",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_nht_resolution/exported_topology.json"
+    },
+    {
+      "name": "zebra_received_nhe_kept",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_received_nhe_kept/exported_topology.json"
+    },
+    {
+      "name": "zebra_reserved_ranges",
+      "routers": 1,
+      "switches": 1,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_reserved_ranges/exported_topology.json"
+    },
+    {
+      "name": "zebra_rib",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_rib/exported_topology.json"
+    },
+    {
+      "name": "zebra_startup_speeds",
+      "routers": 1,
+      "switches": 0,
+      "output": "/home/frr/de/frr/tests/topotests/zebra_startup_speeds/exported_topology.json"
+    }
+  ],
+  "failed": [
+    {
+      "name": "bfd_bgp_cbit_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bfd_isis_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bfd_ospf_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bfd_profiles_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bfd_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bfd_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bfd_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_addpath_graceful_restart",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_addpath_llgr",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_always_compare_med",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_as_allow_in",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_basic_functionality_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_communities_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_conditional_advertisement_static_route",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_confed2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_confederation_astype",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_dampening_per_peer",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_dampening_per_safi",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_default_originate",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_dont_capability_negotiate",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_dynamic_capability",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_ecmp_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_ecmp_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_evpn_flooding_per_vni",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_evpn_maximum_prefix",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_evpn_route_map_match",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_evpn_route_map_set",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_evpn_rt5_addpath",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_extended_link_bandwidth",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_extended_optional_parameters_length",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_gr_functionality_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_gr_functionality_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_gr_functionality_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_gshut_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_ibgp_software_version_fqdn_capabilities",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_instance_del_test",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_ipv4_over_ipv6",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_ipv6_next_hop_self",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_l3vpn_to_bgp_direct",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_l3vpn_to_bgp_vrf",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_large_community",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_listen_on_multiple_addresses",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_local_asn",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_local_asn_dot",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_match_peer",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_mrai_suppress_duplicate",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_multi_vrf_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_multi_vrf_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_nhc",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_oad",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_orf",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_path_attributes_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_peer_graceful_shutdown",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_peer_group_solo",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_peer_solo",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_prefix_list_any",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_prefix_list_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_received_routes_with_soft_inbound",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_recursive_route_ebgp_multi_hop",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_remote_as_auto",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_remote_as_ra_validation",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_rfapi_basic_sanity",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_rfapi_basic_sanity_config2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_roles_capability",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_roles_filtering",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_route_aggregation",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_route_map",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_route_map_delay_timer",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_self_prefix",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_set_metric_igp",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_show_advertised_routes_detail",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_show_routes_vty",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_software_version",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_srv6_unicast",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_table_map",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_unique_rid",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_update_delay_default_originate",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_vrf_dynamic_route_leak",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_vrf_dynamic_route_leak_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_vrf_dynamic_route_leak_topo4",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_vrf_lite_best_path_test",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_wcmp_zebra_link_bandwidth",
+      "error": "Parse failed"
+    },
+    {
+      "name": "bgp_weighted_ecmp_recursive",
+      "error": "Parse failed"
+    },
+    {
+      "name": "config_timing",
+      "error": "Parse failed"
+    },
+    {
+      "name": "dump_of_bgp",
+      "error": "Parse failed"
+    },
+    {
+      "name": "evpn_type5_test_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "example_munet",
+      "error": "Parse failed"
+    },
+    {
+      "name": "grpc_basic",
+      "error": "Parse failed"
+    },
+    {
+      "name": "key_sendaccept",
+      "error": "Parse failed"
+    },
+    {
+      "name": "log_config",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_config",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_debug_flags",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_fe_client",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_notif",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_oper",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_regress",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_rpc",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_startup",
+      "error": "Parse failed"
+    },
+    {
+      "name": "mgmt_tests",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_mld_join_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim6_sm_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_bsm_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_bsm_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_dr_nondr_test",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_sm_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_sm_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_sm_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_uplink_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_uplink_topo2",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_uplink_topo3",
+      "error": "Parse failed"
+    },
+    {
+      "name": "multicast_pim_uplink_topo4",
+      "error": "Parse failed"
+    },
+    {
+      "name": "nb_config",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospf6_loopback_cost",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospf_basic_functionality",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospf_dual_stack",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospf_forwarding_address_self",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospf_gr_helper",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospfapi",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ospfv3_basic_functionality",
+      "error": "Parse failed"
+    },
+    {
+      "name": "rip_allow_ecmp",
+      "error": "Parse failed"
+    },
+    {
+      "name": "rip_bfd_topo1",
+      "error": "Parse failed"
+    },
+    {
+      "name": "rip_disabled_networks",
+      "error": "Parse failed"
+    },
+    {
+      "name": "rip_passive_interface",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ripng_aggregate_address",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ripng_allow_ecmp",
+      "error": "Parse failed"
+    },
+    {
+      "name": "ripng_route_map",
+      "error": "Parse failed"
+    },
+    {
+      "name": "route_map_check_unused",
+      "error": "Parse failed"
+    },
+    {
+      "name": "route_scale",
+      "error": "Parse failed"
+    },
+    {
+      "name": "send_log",
+      "error": "Parse failed"
+    },
+    {
+      "name": "simple_snmp_test",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_encap_src_addr",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_locator",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_locator_custom_bits_length",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_locator_usid",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_static_route",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_static_route_ipv4",
+      "error": "Parse failed"
+    },
+    {
+      "name": "srv6_static_route_reduced",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_route_blackhole",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_routing_with_ebgp",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_routing_with_ibgp",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_simple",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_srv6_sids",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_srv6_sids_multiple_locators",
+      "error": "Parse failed"
+    },
+    {
+      "name": "static_vrf",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_netlink",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_opaque",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_operational_data",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_pref64",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_recursive_nhg_installed",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_seg6_route",
+      "error": "Parse failed"
+    },
+    {
+      "name": "zebra_seg6local_route",
+      "error": "Parse failed"
+    }
+  ],
+  "empty": [
+    {
+      "name": "bgp_evpn_overlay_index_gateway"
+    },
+    {
+      "name": "bgp_evpn_rt5_implied"
+    },
+    {
+      "name": "bgp_l3vpn_hidden"
+    },
+    {
+      "name": "bgp_peergroup_gshut"
+    },
+    {
+      "name": "bgp_tcp_ip_transparent"
+    },
+    {
+      "name": "multicast_pim6_static_rp_topo1"
+    },
+    {
+      "name": "multicast_pim_static_rp_topo1"
+    },
+    {
+      "name": "multicast_ssm_topo1"
+    }
+  ]
+}
